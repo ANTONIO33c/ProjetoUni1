@@ -4,7 +4,12 @@
 *{
 margin: 0;
 padding: 0%;
-font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: white;
+}
+
+body {
+    background-color: #121C46; 
 }
 
 
@@ -63,7 +68,51 @@ header{
     display: none;
 }
 
+/* Edição dos cards */
+.card1{
+    border: 3px solid #ffffff; 
+}
+.card2{
+    border: 3px solid #fffafa; 
+}
+.card3{
+    border: 3px solid #ffffff; 
+}
+.cards
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
+#card-2-img
+{
+    border-bottom: 1px solid white;
+}
+.button{
+    transition: all 0.6s ease;
+}
+.btn:hover
+{
+    background-color: #ffcc4cc2;
+    color: black;
+}
+
+.card-img-top
+{
+    padding-top: 4px;
+}
+
+/* fim da edição dos cards */
+.images-carousel{
+    border-radius: 4%;
+}
+
+#listbox
+{
+   
+    font-size: 2rem;
+}
 /* parte responsiva*/
 @media screen and (max-width: 870px) {
     .nav-bar {
@@ -97,16 +146,29 @@ header{
     .open {
         display: block;
     }
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+}
+
+#listbox
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
 }
 /*fim da parte responsiva*/
 /*Fim cabeçalho/Barra de navegação*/
 
-.images-carousel{
-    border-radius: 4%;
-}
 
-body {
-    background-color: #121C46; /* ou qualquer outra cor de fundo */
-}
+
+
+
 
 
