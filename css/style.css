@@ -16,7 +16,8 @@ body {
 header{
     background-color: #121C46;
     box-shadow: 0px, 3px, 10px #464646;
-    border-bottom: 1px solid #ffffff
+    border-bottom: 1px solid #ffffff;
+   
 }
 
 .nav-bar{
