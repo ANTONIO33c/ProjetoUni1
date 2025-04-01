@@ -1,1 +1,14 @@
+/* Oculta o menu de celular em telas grandes */
+.mobile-menu {
+    display: none;
+}
 
+/* Exibe o menu de celular apenas em telas menores que 768px */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
