@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Começo do topo do site*/
 
 header{
@@ -88,6 +89,19 @@ header{
     }
     
     .open {
+=======
+/* Oculta o menu de celular em telas grandes */
+.mobile-menu {
+    display: none;
+}
+
+/* Exibe o menu de celular apenas em telas menores que 768px */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+    .mobile-menu {
+>>>>>>> 5353cd3fc63dd2f78684cdc8ee8e1a6e26ee7e4b
         display: block;
     }
 }

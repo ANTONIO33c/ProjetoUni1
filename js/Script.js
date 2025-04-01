@@ -2,7 +2,14 @@ function openModal(id) {
     const modal = document.getElementById(id);
     if (modal) {
         modal.showModal();
-    } else {
+
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeModal(id);
+            }
+        });
+    } 
+    else {
         console.error("Modal não encontrado: " + id);
     }
 }
