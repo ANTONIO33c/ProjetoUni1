@@ -14,19 +14,21 @@
 </head>
 <body>
 
-    <!-- Cria um botão na página que direciona para o whatsapp 
-    <a class = whatsappImage href="https://wa.me/5511962170824" target = "_blank">
-        <img src="Assets/images/WhatsApp Button.webp" width="80px"> -->
+    <a class="whatsapp-float" href="https://wa.me/5511962170824" target="_blank" rel="noopener noreferrer">
+        <img src="images/whatsapp.png" alt="WhatsApp" width="80" height="80">
+        <span>Fale Conosco!</span>
+    </a>
+
+
+    <!-- teste  <a class ="fale" href="https://wa.me/5511962170824" target="_blank" rel="noopener noreferrer">
+        <p> Fale Conosco!</p>
+    </a>   -->
+
 
            <!-- topo do site -->
 
  <header id="header">
     <nav class="nav-bar">
-        <div class="logo">
-           <img src="images/logo_empresa_g_atuuu.jpg" alt="logo_da_empresa" srcset="">
-           <a href="#header"></a>
-        </div>
-
         <div class="nav-list">
             <ul>
                 <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('OquesãoMilhas')">O que são Milhas</a></li>
@@ -35,18 +37,22 @@
                 <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('FaleConosco')">Fale conosco</a></li>
             </ul>
         </div>
-        <!-- <button onclick="menuShow()"><div class="mobile-menu-icon"> -->
-            <!-- <button><img class="icon" src="images/menu_white_36dp.svg" alt=""></button> -->
+        <div class="mobile-menu-icon">
+            <button><img class="icon" src="images/menu_white_36dp.svg" alt=""></button>
         </div>
     </nav>
-    <div class="mobile-menu">
+    <!-- <div class="mobile-menu">
         <ul>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('OquesãoMilhas')">O que são Milhas</a></li>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('JaPassouPorIsso')">Já passou por isso?</a></li>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('FaleConosco')">Fale conosco</a></li>
         </ul>
-    </div>
+    </div> -->
+    <div class="logo">
+        <img src="images/logo.png" alt="logo_da_empresa" srcset="">
+        <a href="#header"></a>
+     </div>
     <!-- Pop Up/Modal -->
     <dialog id="OquesãoMilhas">
             <p> Essas milhas podem ser acumuladas de várias maneiras:
@@ -83,6 +89,22 @@
     </dialog>
  </header>
 
+    <main>
+            <div class="resumo">
+                <p>
+                    Milhas são pontos acumulados em programas de fidelidade de companhias aéreas ou cartões de crédito,
+                </p>
+                <p>
+                    que podem ser trocados por passagens ou outros benefícios. A compra de milhas permite que você adquira pontos extras,
+                </p> 
+                <p>   
+                    facilitando viagens ou co   nquistas de vantagens mais rapidamente.
+                </p>    
+                <p>    
+                    É uma forma prática de otimizar suas viagens e aproveitar melhor os programas de fidelidade.
+                </p>
+            </div>
+    </main>
 
 
 
