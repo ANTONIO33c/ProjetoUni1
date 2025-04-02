@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo | Milhas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Referencia o arquivo.css do site -->
+    <link rel="stylesheet" href="css/Style.css">
+    <!-- Icon window -->
+     <link rel="shortcut icon" href="images/image_Card_2.jpg" type="image/x-icon">
+    
+</head>
+<body>
+
+    <!-- Cria um botão na página que direciona para o whatsapp 
+    <a class = whatsappImage href="https://wa.me/5511962170824" target = "_blank">
+        <img src="Assets/images/WhatsApp Button.webp" width="80px"> -->
+
+           <!-- topo do site -->
+
+ <header id="header">
+    <nav class="nav-bar">
+        <div class="nav-list">
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('OquesãoMilhas')">O que são Milhas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('JaPassouPorIsso')">Já passou por isso?</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('FaleConosco')">Fale conosco</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-icon">
+            <button><img class="icon" src="images/menu_white_36dp.svg" alt=""></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('OquesãoMilhas')">O que são Milhas</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('JaPassouPorIsso')">Já passou por isso?</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('FaleConosco')">Fale conosco</a></li>
+        </ul>
+    </div>
+    <div class="logo">
+        <img src="images/logo.png" alt="logo_da_empresa" srcset="">
+        <a href="#header"></a>
+     </div>
+    <!-- Pop Up/Modal -->
+    <dialog id="OquesãoMilhas">
+            <p> Essas milhas podem ser acumuladas de várias maneiras:
+                Viagens aéreas: Ao voar com uma companhia aérea ou suas parceiras, você ganha milhas com base na distância percorrida, no valor do bilhete, ou no tipo de classe de serviço (econômica, executiva, etc.).
+                
+                Compras: Algumas lojas ou serviços oferecem programas de recompensas que acumulam milhas quando você compra  rodutos ou serviços.
+                
+                Cartões de crédito: Muitos cartões de crédito oferecem milhas como parte do programa de recompensas, que podem ser acumuladas a cada compra feita.
+                
+                Essas milhas, acumuladas ao longo do tempo, podem ser trocadas por passagens, hospedagens, produtos ou outras vantagens, dependendo do programa de fidelidade .</p>
+            <button onclick="closeModal('OquesãoMilhas')">Fechar</button>
+    </dialog>
+    <dialog id="JaPassouPorIsso">
+        <p>Toda vez que vou viajar, sinto que as passagens e hotéis são muito caros;
+            Vejo meus amigos viajando de graça e eu continuo pagando caro em passagens, hotéis, aluguel de carro;
+            Me sinto perdido quando o assunto é milhas, é muita informação e não tenho paciência de olhar nem conhecer;
+            Tenho uma boa renda, mas não consigo acessar os melhores cartões;
+            Gasto muito no cartão de crédito e não sei para onde vão meus pontos, nunca aumentam;
+            Não consigo me organizar com clubes e programas, sempre acabo deixando meus pontos expirar:
+            Não sei quanto valem as minhas milhas, fico com pena de usar e com receio de fazer um mau negócio;
+            Não consigo viajar com conforto diferenciado, com salas VIP, upgrades, embarques prioritários,
+            Escolha de assentos e bagagens gratuitas;
+            Não sei quando ocorrem as promoções nem se são boas, nunca sei o melhor momento de transferir;
+            Prefiro o cashback ou trocar meus pontos por produtos por que tenho a sensação de que não desperdicei;</p>
+        <button onclick="closeModal('JaPassouPorIsso')">Fechar</button>
+    </dialog>
+    <dialog id="NossoServicos">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dignissimos repellendus assumenda illo deleniti optio expedita porro maxime? Id aspernatur recusandae debitis quas amet molestiae quisquam culpa nisi omnis aperiam.
+        <button onclick="closeModal('NossoServicos')">Fechar</button>
+    </dialog>
+    <dialog id="FaleConosco">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint sed perferendis possimus facere similique beatae expedita voluptates saepe. Odio fugit ratione voluptates saepe ipsam et, vitae quo iusto natus deleniti.
+        <button onclick="closeModal('FaleConosco')">Fechar</button>
+    </dialog>
+ </header>
+
+    <main>
+            <div class="resumo">
+                <p>
+                    Milhas são pontos acumulados em programas de fidelidade de companhias aéreas ou cartões de crédito,
+                </p>
+                <p>
+                    que podem ser trocados por passagens ou outros benefícios. A compra de milhas permite que você adquira pontos extras,
+                </p> 
+                <p>   
+                    facilitando viagens ou co   nquistas de vantagens mais rapidamente.
+                </p>    
+                <p>    
+                    É uma forma prática de otimizar suas viagens e aproveitar melhor os programas de fidelidade.
+                </p>
+            </div>
+    </main>
+
+
+
+    
+    <!-- Referencia o Scrips.js do bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Referencia o script base do site -->
+    <script src="js/Script.js"></script>
+</body>
+</html>

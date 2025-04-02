@@ -1,0 +1,147 @@
+body{
+    background-image:url(/ProjetoUni1/images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.logo img{
+    width: 15%;
+    height: auto;
+
+    position:relative;
+    left: 7%;
+    top: 20%;
+}
+
+.resumo{
+    margin: 0px;
+    line-height: 1.0;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:150%;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    
+    margin-left: 7%;
+    margin-top: 5%;
+
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; 
+    padding: 1rem 2rem; 
+    position: relative;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-list ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem; 
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+dialog {
+    width: 80%;
+    max-width: 600px;
+    padding: 2rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+dialog button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+    
+    .mobile-menu-icon {
+        display: block;
+    }
+    
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    
+    .mobile-menu.active {
+        display: flex;
+    }
+    
+    .mobile-menu ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .mobile-menu .nav-item {
+        width: 100%;
+    }
+    
+    .mobile-menu .nav-link {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+}
