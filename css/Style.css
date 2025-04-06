@@ -1,17 +1,54 @@
 body{
-    background-image: linear-gradient(rgba(25,25,25,0.5),rgba(25,25,25,0.5)) ,url(../images/airport-terminal.jpg);
+    background-image: linear-gradient(rgba(25,25,25,0.5),rgba(25,25,25,0.5)) ,url(../images/background-image-janela-aviao.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    margin: 0;
 }
+ /* video de fundo */
+
+ /* body video{
+    width: 100%;
+    min-height: 200vh;
+    background: rgba(0, 0, 0, 0.7); 
+    
+   
+    
+ }
+ section{
+    width: 100%;
+    height: 100%;
+    position: relative;
+ }
+ section div.background-section
+ {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); /* Escurece o vídeo com sobreposição} */
+   
+   
+   
+ 
+ /* fim video de fundo */
+ section div.background-section video
+ {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+   
+
+   
+ }
 
 .logo img{
     width: 15%;
     height: auto;
-
-    position:relative;
     left: 5%;
     top: 2%;
 }
@@ -101,13 +138,18 @@ body{
 
 /* Nav Responsive */
 header {
+    background-color: rgba(36, 37, 42, 0.6); /* Um tom mais escuro com transparência */
+    /box-shadow: 0px 3px 10px rgba(70, 70, 70, 0.5);
     border-bottom: 1px solid white;
+
+
+    
 }
 
 .nav-bar {
     display: flex;
-    justify-content: space-around;
-    padding: 1rem 3rem;
+    justify-content:space-around;
+    padding: 1.5rem 6rem;
 }
 
 .logo {
@@ -115,18 +157,21 @@ header {
     align-items: center;
 }
 
+.logo h1 {
+    color: #fff;
+}
+
 .nav-list {
     display: flex;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    
 }
 
 .nav-list ul {
     display: flex;
-    justify-content: space-evenly;
     list-style: none;
-    width: 100%;
-    height: auto;
+    justify-content: flex-end;
 }
 
 .nav-item {
@@ -135,10 +180,30 @@ header {
 
 .nav-link {
     text-decoration: none;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     color: #fff;
     font-weight: 400;
     font-family: "Libre Baskerville", serif;
+}
+
+.login-button button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #00507e;
+    font-family: "Libre Baskerville", serif;
+}
+
+.login-button button:hover
+{
+    background-color: #00114b;
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .mobile-menu-icon {
@@ -149,32 +214,6 @@ header {
     display: none;
 }
 
-.list-item
-{
-    width: 100%;
-}
-/* Quebra de Linha/fonte */
-
-@media screen and (max-width: 816px) {
-    .nav-link {
-        
-        font-size: 1rem;
-        
-       
-    }
-}
-@media screen and (max-width: 752px) {
-    .nav-link {
-        
-        font-size: 0.8rem;
-        
-       
-    }
-}
-
-/* Fim quebra de linha/fonte */
-
-/*Inicio Nav Resposiva */
 @media screen and (max-width: 730px) {
     .nav-bar {
         padding: 1.5rem 4rem;
@@ -203,19 +242,40 @@ header {
         display: block;
         padding-top: 1.2rem;
     }
-   
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
     .open {
         display: block;
     }
+}
+/* Fim Nav Responsive */
+
+
+/* Quebra de Linha/fonte */
+
+@media screen and (max-width: 816px) {
     .nav-link {
         
-        font-size: 1.4rem; 
+        font-size: 1rem;
+        
+       
+    }
+}
+@media screen and (max-width: 752px) {
+    .nav-link {
+        
+        font-size: 1rem;
+        
+       
     }
 }
 
-/* Fim Nav Reponsiva */
-
-
+/* Fim quebra de linha/fonte */
 
 dialog {
     width: 80%;
@@ -237,8 +297,6 @@ dialog {
 dialog::backdrop{
 background-color: rgba(0, 0, 0, 0.8); /* Mais escuro - 70% */
 }
-
-
 dialog button {
     padding: 0.5rem 1rem;
     background-color: #333;
@@ -254,6 +312,69 @@ dialog button {
 {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+   
+}
+.Cards > *:not(:last-child) {
+    margin-right: 25px; /* Aplica o espaçamento apenas aos elementos, exceto o último */
+}
+.card {
+    background-color: rgba(36, 37, 42, 0.8);
+    color: white;
+    width: 20rem;
+    transition: transform 0.3s ease;
+    z-index:1;
+    border-radius: 15%;
+}
+
+.card:hover {
+    transform: scale(1.10);
+}
+.card-img-top{
+    border-radius: 15%;
+}
+
+@media screen and (max-width: 730px) {
+    .Cards
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        
+    } 
+    .Cards > *:not(:last-child) {
+        margin-right: 0px; 
+    }
+    .card:hover {
+        transform:none
+    }
+    
+    
+   
 }
 /* Fim Style Cards */
+/* inicio estilização viagens ao brasil */
+#title-viaje-brasil {
+    color: rgb(255, 248, 248);
+    font-family: "Libre Baskerville", serif;
+    font-size: 2rem;
+    margin: 2% 8% 0 7%;
+    font-weight: bold;
+}
+
+#p-viagem-brasil {
+    color: rgb(255, 240, 240);
+    font-family: "Libre Baskerville", serif;
+    font-size: 1rem;
+    margin: 0% 6% 0 4%;
+    font-weight: bold;
+}
+.text-viagem-brasil{
+   
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+/* fim estilização */
