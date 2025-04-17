@@ -37,10 +37,5 @@ function menuShow() {
 
 // diminuindo a velocidade do video
 
-document.addEventListener('DOMContentLoaded', function () {
-    const video = document.querySelector('.video-bg video');
-    if (video) {
-        video.playbackRate = 0.5; // 0.5 = metade da velocidade normal
-    }
-});
+
 

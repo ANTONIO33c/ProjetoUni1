@@ -1,8 +1,10 @@
-
+body{
+    background-color: #1a1a1a;
+}
 .video-bg {
-    position: fixed;
+    position: absolute;
     width: 100%;
-    height: 100%;
+    height: 71%; /* Limite o vídeo até 60% da altura da tela */
     overflow: hidden;
     z-index: -1;
 }
@@ -12,15 +14,13 @@
     height: 100%;
     object-fit: cover;
 }
-
-.filtro-video
-{
+.filtro-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 0.5 = opacidade, ajuste como quiser */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)); /* Degradê de preto com opacidades variadas */
 }
 
  /* video de fundo */
@@ -316,12 +316,13 @@ dialog button {
     margin-right: 25px; /* Aplica o espaçamento apenas aos elementos, exceto o último */
 }
 .card {
-    background-color: rgba(36, 37, 42, 0.8);
-    color: white;
-    width: 20rem;
-    transition: transform 0.3s ease;
-    z-index:1;
-    border-radius: 8%;
+    background-color: #2C2F3D; 
+    color: #fff; 
+    width: 22rem; 
+    height: auto;
+    padding: 20px;
+    border-radius: 12px; 
+    transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
@@ -392,5 +393,31 @@ justify-content: center;
 }
 
 /* logo estilização */
+/*  estilizar parte de duvida abaixo dos cards */
+.vantagens{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.title-vantagens
+{
+    color: white;
+    font-size: 2rem;
+    display:flex;
+    justify-content: center;
+}
+
+.title-components
+{
+    color: white;
+}
+.components
+{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+/* fim estilização abaixo dos cartas */
 
 /* fim estilização */
