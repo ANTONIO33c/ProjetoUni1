@@ -133,7 +133,7 @@
 /* Nav Responsive */
 header {
     background-color: rgba(36, 37, 42, 0.6); /* Um tom mais escuro com transparência */
-    /box-shadow: 0px 3px 10px rgba(70, 70, 70, 0.5);
+    box-shadow: 0px 3px 10px rgba(70, 70, 70, 0.5);
     border-bottom: 1px solid white;
 
 
@@ -329,6 +329,7 @@ dialog button {
 }
 .card-img-top{
     border-radius: 8%;
+
 }
 
 @media screen and (max-width: 730px) {
@@ -338,6 +339,7 @@ dialog button {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+      
         
         
     } 
@@ -353,6 +355,13 @@ dialog button {
 display: flex;
 text-align: center;
 justify-content: center;
+}
+.card {
+   
+    width: 22rem;
+    transition: transform 0.3s ease;
+    z-index:1;
+    border-radius: 9%;
 }
     
     
