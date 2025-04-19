@@ -15,13 +15,12 @@
 <body>
 
    <!-- Vídeo de fundo -->
-   <div class="video-bg">
+   <div class="video-bg hidden">
     <video autoplay loop muted playsinline>
         <source src="Videos/2252797-uhd_3840_2160_30fps.mp4" type="video/mp4">
         Seu navegador não suporta vídeo em HTML5.
     </video>
 
-    <div class="filtro-video"></div>
 </div>
 
     
@@ -60,7 +59,7 @@
     </div>
  </section> -->
 
-    <div class="logo">
+    <div class="logo hidden">
         <img src="images/logo.png" alt="logo_da_empresa" srcset="">
         <a href="#header"></a>
      </div>
@@ -111,14 +110,14 @@
     <main>
             <br>
             <br>
-        <div class="text-viagem-brasil">
+        <div class="text-viagem-brasil hidden">
             <h2 id="title-viaje-brasil">Viaje o Mundo Sem Estourar o Orçamento</h2>
             <br>
             <p id="p-viagem-brasil">Realizamos a emissão de passagens aéreas por meio de um banco de milhas ao qual temos acesso, possibilitando descontos que variam de 20% a até 80% em relação aos valores praticados pelas companhias aéreas tradicionais. ✈️🌎</p>
         </div>
                 <br>
                 <br>
-            <div class="Cards">
+            <!-- <div class="Cards">
             <div class="card">
                 <img class="card-img-top" src="images/card-PE.jpg" alt="Imagem de capa do card" onclick="openModal('FernandoDeNoronha')">
                 <div class="card-body">
@@ -150,12 +149,58 @@
                     <p class="card-text">Rio de Janeiro, Brasil</p>
                 </div>
               </div>
+            </div> -->
+
+        <div style="height: 30vh;"></div>
+
+
+        <div class="content-container hidden">
+            <div class="left-text">
+                <h1>Meu Título</h1>
+                <p>Esse é o texto que aparece ao lado do slider.</p>
             </div>
-          
+            <div class="slider">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+    
+                    <div class="slide first">
+                        <img src="Assets/images/FernandoDeNoronhaImages.jpg" alt="Imagem1">
+                    </div>
+                    <div class="slide">
+                        <img src="Assets/images/SãoPauloImage.jpeg" alt="Imagem2">
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="Assets/images/BrasiliaImage.jpg" alt="Imagem3">
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="Assets/images/RioDeJaneiroImage.jpeg" alt="Imagem4">
+                    </div>
+    
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+                </div>
+    
+                <div class="manual-navigation">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+    
+                </div>
+            </div>
+        </div> 
+
+        <div style="height: 70vh;"></div>
            
-    </main>
-
-
 
     
     <!-- Referencia o Scrips.js do bootstrap -->

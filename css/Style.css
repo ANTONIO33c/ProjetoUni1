@@ -1,5 +1,5 @@
 body{
-    background-color: #1a1a1a;
+    background-color: rgb(26, 26, 26);
 }
 .video-bg {
     position: absolute;
@@ -9,18 +9,40 @@ body{
     z-index: -1;
 }
 
-.video-bg video {
+.video-bg video{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
-.filtro-video {
+
+.video-bg::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* altura do degradê */
+  background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 10%,
+        rgba(26, 26, 26, 0.2) 40%,
+        rgba(26, 26, 26, 0.4) 60%,
+        rgba(26, 26, 26, 0.6) 75%,
+        rgba(26, 26, 26, 0.85) 90%,
+        rgba(26, 26, 26, 1) 100%
+    );
+  pointer-events: none;
+}
+
+.video-bg::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)); /* Degradê de preto com opacidades variadas */
+    height: 30px;
+    background: rgba(26, 26, 26, 1);
+    filter: blur(15px);
+    pointer-events: none;
 }
 
  /* video de fundo */
@@ -208,6 +230,7 @@ header {
     display: none;
 }
 
+
 @media screen and (max-width: 730px) {
     .nav-bar {
         padding: 1.3rem 0rem;
@@ -249,9 +272,10 @@ header {
     .open {
         display: block;
     }
+
+    
 }
 /* Fim Nav Responsive */
-
 
 /* Quebra de Linha/fonte */
 
@@ -305,7 +329,7 @@ dialog button {
 }
 
 /* Style Cards */
-.Cards
+/* .Cards
 {
     display: flex;
     flex-direction: row;
@@ -314,7 +338,7 @@ dialog button {
 }
 .Cards > *:not(:last-child) {
     margin-right: 25px; /* Aplica o espaçamento apenas aos elementos, exceto o último */
-}
+/* }
 .card {
     background-color: #2C2F3D; 
     color: #fff; 
@@ -331,7 +355,149 @@ dialog button {
 .card-img-top{
     border-radius: 8%;
 
+} */ 
+
+/* Slider area */
+
+.hidden{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.4s ease-out;
 }
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-container {
+    display: flex;
+    align-items: center; /* alinha o conteúdo no "pé" */
+    justify-content: space-between;
+    height: 100vh; /* ocupa a altura total da tela */
+    padding: 50px; /* dá espaço nas bordas */
+}
+
+/* Texto da esquerda */
+.left-text {
+    flex: 1;
+    justify-content: right;
+    text-align: right;
+    padding: 20px;
+    color: #fff;
+}
+
+
+
+.slider {
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+    
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+    height: 100%;
+    border-radius: 2%;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: #fff;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+
+.navigation-auto div{
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #fff;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: #fff;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #fff;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: #fff;
+}
+
+
+
+/* end SLider area */
 
 @media screen and (max-width: 730px) {
     .Cards
@@ -340,7 +506,6 @@ dialog button {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-      
         
         
     } 
@@ -350,6 +515,7 @@ dialog button {
     .card:hover {
         transform:none
     }
+
 
     .logo
 {
@@ -363,6 +529,8 @@ justify-content: center;
     transition: transform 0.3s ease;
     z-index:1;
     border-radius: 9%;
+
+
 }
     
     

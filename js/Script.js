@@ -35,6 +35,49 @@ function menuShow() {
     }
 }
 
+//Slider automatico
+
+let count = 1;
+document.getElementById("radio1").checked = true;
+
+setInterval( function(){
+    nextImage();
+}, 4000)
+
+function nextImage(){
+    count++;
+    if(count > 4){
+        count = 1;
+    }
+
+    document.getElementById("radio"+count).checked = true;
+}
+
+//opacidade do scroll
+
+const observers = {}; // Guarda os observers criados por threshold
+
+function getObserver(threshold) {
+    if (!observers[threshold]) {
+        observers[threshold] = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: parseFloat(threshold) });
+    }
+    return observers[threshold];
+}
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => {
+    const threshold = el.dataset.threshold || '0.5'; // padrão 0.5 se não definido
+    const observer = getObserver(threshold);
+    observer.observe(el);
+});
 // diminuindo a velocidade do video
 
 
