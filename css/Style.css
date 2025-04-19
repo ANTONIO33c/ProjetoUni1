@@ -1,10 +1,11 @@
+/* Style Background Site */
 body{
     background-color: rgb(26, 26, 26);
 }
 .video-bg {
     position: absolute;
     width: 100%;
-    height: 71%; /* Limite o vídeo até 60% da altura da tela */
+    height: 100%; /* Limite o vídeo até 60% da altura da tela */
     overflow: hidden;
     z-index: -1;
 }
@@ -39,35 +40,31 @@ body{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 30px;
-    background: rgba(26, 26, 26, 1);
-    filter: blur(15px);
-    pointer-events: none;
+    height: 100%;
+    background-color: rgba(36, 37, 42, 0.4);
 }
 
- /* video de fundo */
+ /* Fim Style Background Site */
 
- 
-   
- 
- /* fim video de fundo */
- section div.background-section video
- {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-   
-
-   
- }
-
+/* Logo G Milhas */
 .logo img{
     width: 15%;
     height: auto;
-    left: 5%;
     top: 2%;
+    left: 2%;
 }
+
+
+
+@media screen and (max-width: 847px) {
+    .logo img{
+        width: 25%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+
 
 
 /* importaçao de fonte */
@@ -89,72 +86,10 @@ body{
     font-style: italic;
   }  
 
-.resumo {
-    margin: 2% 7% 0 2%; 
-    line-height: 1.4; 
-    font-family: "Libre Baskerville", serif;
-    font-size: clamp(16px, 4vw, 24px);
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    padding: 0 5%; 
-}
-
-@media screen and (max-width: 768px) {
-    .resumo {
-        margin: 15px 5% 0 5%;
-        font-size: clamp(14px, 5vw, 18px);
-        line-height: 1.5; 
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .resumo {
-        margin: 10px 3% 0 3%;
-        padding: 0 3%;
-        font-size: clamp(12px, 4.5vw, 16px); 
-    }
-}
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 20%;
-    left: 7%;
-    z-index: 100;
-    transition: transform 0.3s ease;
-    display: flex;
-    align-items: center; 
-    gap: 20px;
-    background-color: #198bfe; 
-    padding: 10px 25px;
-    border-radius: 51px; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    text-decoration: none;
-    color: white; 
-    font-weight: bold;
- }
-  
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-/* teste .fale{
-    text-decoration: none;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 200%;
-    color: white;
-    position: fixed;
-    bottom: 20%;
-    left: 12%;
-    transition: transform 0.3s ease;
-} */
-
-/* .fale:hover {
-    transform:scale(1.1);
-} */
 
 /* Nav Responsive */
 header {
-    background-color: rgba(36, 37, 42, 0.6); /* Um tom mais escuro com transparência */
+    background-color: rgba(36, 37, 42, 0.7); /* Um tom mais escuro com transparência */
     box-shadow: 0px 3px 10px rgba(70, 70, 70, 0.5);
     border-bottom: 1px solid white;
 
@@ -231,7 +166,8 @@ header {
 }
 
 
-@media screen and (max-width: 730px) {
+/* Reposividade Navbar */
+@media screen and (max-width: 847px) {
     .nav-bar {
         padding: 1.3rem 0rem;
         display: flex;
@@ -272,10 +208,9 @@ header {
     .open {
         display: block;
     }
-
-    
+  
 }
-/* Fim Nav Responsive */
+/* Fim Navbar Responsive */
 
 /* Quebra de Linha/fonte */
 
@@ -537,11 +472,12 @@ justify-content: center;
    
 }
 /* Fim Style Cards */
+
 /* inicio estilização viagens ao brasil */
 #title-viaje-brasil {
     color: rgb(255, 248, 248);
     font-family: "Libre Baskerville", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 2% 8% 0 7%;
     font-weight: bold;
 }
@@ -549,7 +485,7 @@ justify-content: center;
 #p-viagem-brasil {
     color: rgb(255, 240, 240);
     font-family: "Libre Baskerville", Arial, Helvetica, sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0% 6% 0 7%;
     font-weight: bold;
 }
@@ -561,31 +497,36 @@ justify-content: center;
 }
 
 /* logo estilização */
-/*  estilizar parte de duvida abaixo dos cards */
-.vantagens{
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-
-.title-vantagens
-{
-    color: white;
-    font-size: 2rem;
-    display:flex;
-    justify-content: center;
-}
-
-.title-components
-{
-    color: white;
-}
-.components
-{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
+/* Estilo da seção Garantia */
+.garantia {
+    background-color: rgba(36, 37, 42, 0.6);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .garantia .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .garantia-titulo {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .garantia-texto {
+    font-size: 18px;
+    color: #c0c0c0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .garantia strong {
+    color: #0077cc;
+  }
+/* Fim Reponsivo componentes */
+/* fim reposividade title */
 /* fim estilização abaixo dos cartas */
 
 /* fim estilização */
