@@ -334,7 +334,7 @@ dialog button {
     align-items: center;
     justify-content: space-between;
     height: 100vh; 
-    padding: 50px; 
+    padding: 50px;
 }
 
 /* Texto da esquerda */
@@ -356,6 +356,7 @@ dialog button {
     position: relative;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
 }
 
 .slides{
@@ -365,7 +366,7 @@ dialog button {
     
 }
 
-.Cards input{
+.slides input{
     display: none;
 }
 
@@ -378,7 +379,7 @@ dialog button {
 .slide img{
     width: 800px;
     height: 100%;
-    border-radius: 2%;
+    border-radius: 15px;
 }
 
 .manual-navigation {
