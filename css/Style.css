@@ -337,96 +337,16 @@ dialog button {
     padding: 50px;
 }
 
-/* Texto da esquerda */
-.left-text {
-    flex: 1;
-    justify-content: right;
-    text-align: right;
-    padding: 20px;
-    color: #fff;
-    
-}
 
 
 
-.slider {
-    width: 800px;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-}
-
-.slides{
-    width: 400%;
-    height: 400px;
-    display: flex;
-    
-}
-
-.slides input{
-    display: none;
-}
-
-.slide{
-    width: 25%;
-    position: relative;
-    transition: 2s;
-}
-
-.slide img{
-    width: 800px;
-    height: 100%;
-    border-radius: 15px;
-}
-
-.manual-navigation {
-    position: absolute;
-    bottom: 20px; 
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 2;
-}
-
-.manual-btn{
-    border: 2px solid #fff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.manual-btn:not(:last-child){
-    margin-right: 40px;
-}
-
-.manual-btn:hover{
-    background-color: #fff;
-}
-
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-#radio2:checked ~ .first{
-    margin-left: -25%;
-}
-#radio3:checked ~ .first{
-    margin-left: -50%;
-}
-#radio4:checked ~ .first{
-    margin-left: -75%;
-}
-
-.navigation-auto div{
+/* .navigation-auto div{
     border: 2px solid #20a6ff;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
     transition: 1s;
-}
+} */
 
 .navigation-auto {
     position: absolute;
@@ -436,28 +356,6 @@ dialog button {
     justify-content: center;
     z-index: 1;
 }
-
-.navigation-auto div:not(:last-child){
-    margin-right: 40px;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background-color: #fff;
-}
-
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background-color: #fff;
-}
-
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background-color: #fff;
-}
-
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background-color: #fff;
-}
-
-
 
 /* end SLider area */
 
@@ -494,15 +392,7 @@ dialog button {
         font-size: clamp(1rem, 2.5vw, 2rem);
     }
 
-    .slider {
-        width: 100%;
-        height: auto;
-    }
 
-    .slide img {
-        width: 100%;
-        height: auto;
-    }
 
     .manual-navigation, .navigation-auto
     {
@@ -586,5 +476,7 @@ justify-content: center;
 /* Fim Reponsivo componentes */
 /* fim reposividade title */
 /* fim estilização abaixo dos cartas */
+
+
 
 /* fim estilização */

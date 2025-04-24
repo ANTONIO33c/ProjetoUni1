@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gustavo | Milhas</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+       <!-- link bootstrap -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Referencia o arquivo.css do site -->
     <link rel="stylesheet" href="css/Style.css">
     <!-- Icon window -->
@@ -108,23 +109,24 @@
         <button oneclick="closemodal('riodejaneiro')">Fechar</button>
     </dialog>
 
+        <section>
+            <div class="text-viagem-brasil ">
+                <h2 id="title-viaje-brasil">Viaje o Mundo Sem Estourar o Orçamento</h2>
+                <br>
+                <p id="p-viagem-brasil">Realizamos a emissão de passagens aéreas por meio de um banco de milhas ao qual temos acesso, possibilitando descontos que variam de 20% a até 80% em relação aos valores praticados pelas companhias aéreas tradicionais. ✈️🌎</p>
+            </div>
+        </section>
 
-    <main>
-            <br>
-            <br>
+    <main class="container">
 
        
         
-        <div class="text-viagem-brasil ">
-            <h2 id="title-viaje-brasil">Viaje o Mundo Sem Estourar o Orçamento</h2>
-            <br>
-            <p id="p-viagem-brasil">Realizamos a emissão de passagens aéreas por meio de um banco de milhas ao qual temos acesso, possibilitando descontos que variam de 20% a até 80% em relação aos valores praticados pelas companhias aéreas tradicionais. ✈️🌎</p>
-        </div>
+       
                 <br>
                 <br>
 
-        <div style="height: 50vh;"></div> 
-        <div class="Cards ">
+        <div style="height: 45vh;"></div> 
+        <!-- <div class="Cards ">
             <div class="card">
                 <img class="card-img-top" src="images/card-PE.jpg" alt="Imagem de capa do card" onclick="openModal('FernandoDeNoronha')">
                 <div class="card-body">
@@ -158,64 +160,46 @@
                 </div>
 
                     
-        </div>
+        </div> -->
 
        
 
 
-         <div class="content-container ">
-            <div class="left-text">
-                <h1>Meu Título</h1>
-                <p>Esse é o texto que aparece ao lado do slider.</p>
-            </div>
-            <div class="slider">
-                <div class="slides">
-                    
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-                    <input type="radio" name="radio-btn" id="radio4">
-                    
-                    <div class="slide first">
-                        <img src="Assets/images/FernandoDeNoronhaImages.jpg" alt="Imagem1">
+         
+       
+            <div id="banners" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#banners" data-slide-to="0" class="active"></li>
+                    <li data-target="#banners" data-slide-to="1"></li>
+                    <li data-target="#banners" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="Assets/images/FernandoDeNoronhaImages.jpg" alt="" class="center-block">
                     </div>
-                    <div class="slide">
-                        <img src="Assets/images/SãoPauloImage.jpeg" alt="Imagem2">
+                    <div class="item ">
+                        <img src="Assets/images/RioDeJaneiroImage.jpeg" alt="" class="center-block">
                     </div>
-                    
-                    <div class="slide">
-                        <img src="Assets/images/BrasiliaImage.jpg" alt="Imagem3">
-                    </div>
-                    
-                    <div class="slide">
-                        <img src="Assets/images/RioDeJaneiroImage.jpeg" alt="Imagem4">
-                    </div>
-    
-                    <div class="navigation-auto">
-                        <div class="auto-btn1"></div>
-                        <div class="auto-btn2"></div>
-                        <div class="auto-btn3"></div>
-                        <div class="auto-btn4"></div>
-                    </div>
-
-                    <div class="manual-navigation">
-                        <label for="radio1" class="manual-btn"></label>
-                        <label for="radio2" class="manual-btn"></label>
-                        <label for="radio3" class="manual-btn"></label>
-                        <label for="radio4" class="manual-btn"></label>
-        
+                    <div class="item ">
+                        <img src="Assets/images/SãoPauloImage.jpeg" alt="" class="center-block">
                     </div>
                 </div>
-    
-                
+                <a href="#banners" class="left carousel-control" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a href="#banners" class="right carousel-control" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
             </div>
-        </div>
+            <br>
 
-        <div style="height: 10vh;"></div>
+
         
         <br>
         <br>
-        <section class="garantia">
+        <!-- <section class="garantia">
             <div class="container">
               <h2 class="garantia-titulo">🔒 Garantia e Segurança</h2>
               <p class="garantia-texto">
@@ -227,14 +211,19 @@
                 Sua viagem com <strong>economia e tranquilidade</strong>.
               </p>
             </div>
-          </section>
+          </section> -->
 
     
     <!-- Referencia o Scrips.js do bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Referencia o script base do site -->
-    <script src="js/Script.js"></script>
+    
 </body>
- 
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- JS -->
+   <script src="js/Script.js"></script>
+  
 </html>
 

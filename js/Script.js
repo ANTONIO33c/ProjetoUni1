@@ -35,23 +35,32 @@ function menuShow() {
     }
 }
 
-//Slider automatico
+//Function Carousel
 
-let count = 1;
-document.getElementById("radio1").checked = true;
+$(document).on('ready', function() {
+    $(".regular").slick({
+        dots: true,
+        infinity: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+    });
+});
 
-setInterval( function(){
-    nextImage();
-}, 4000)
+// let count = 1;
+// document.getElementById("radio1").checked = true;
 
-function nextImage(){
-    count++;
-    if(count > 4){
-        count = 1;
-    }
+// setInterval( function(){
+//     nextImage();
+// }, 4000)
 
-    document.getElementById("radio"+count).checked = true;
-}
+// function nextImage(){
+//     count++;
+//     if(count > 4){
+//         count = 1;
+//     }
+
+//     document.getElementById("radio"+count).checked = true;
+// }
 
 //opacidade do scroll
 
@@ -78,7 +87,7 @@ hiddenElements.forEach((el) => {
     const observer = getObserver(threshold);
     observer.observe(el);
 });
-// diminuindo a velocidade do video
+
 
 
 
