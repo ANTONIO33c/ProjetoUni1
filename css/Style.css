@@ -23,7 +23,7 @@ body{
   left: 0;
   width: 100%;
   height: 100%; /* altura do degradê */
-  background: linear-gradient(
+  /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0) 10%,
         rgba(26, 26, 26, 0.2) 40%,
@@ -31,7 +31,7 @@ body{
         rgba(26, 26, 26, 0.6) 75%,
         rgba(26, 26, 26, 0.85) 90%,
         rgba(26, 26, 26, 1) 100%
-    );
+    ); */
   pointer-events: none;
 }
 
@@ -56,7 +56,7 @@ body{
         object-fit: cover;
     }
 
-    .video-bg::after {
+    /* .video-bg::after {
         background: linear-gradient(
             to bottom,
             rgba(255, 255, 255, 0) 5%,
@@ -65,7 +65,7 @@ body{
             rgba(26, 26, 26, 0.85) 90%,
             rgba(26, 26, 26, 1) 100%
         );
-    }
+    } */
 }
 
  /* Fim Style Background Site */
