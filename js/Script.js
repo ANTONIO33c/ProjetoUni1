@@ -45,47 +45,40 @@ $(document).on('ready', function() {
         slidesToScroll: 3
     });
 });
+window.addEventListener('load', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Defina um tempo mínimo de visibilidade para evitar flickering
+            const stableVisibility = 150; // 100ms de estabilidade para visibilidade
 
-// let count = 1;
-// document.getElementById("radio1").checked = true;
+            // Verifica se o elemento está visível mais de 50% (threshold de 0.5)
+            if (entry.intersectionRatio > 0.5) {
+                // Espera um pequeno tempo para garantir estabilidade antes de fazer aparecer
+                setTimeout(() => {
+                    if (!entry.target.classList.contains('show-carousel')) {
+                        entry.target.classList.add('show-carousel');
+                    }
+                }, stableVisibility);
+            } else {
+                // Espera um pequeno tempo para garantir estabilidade antes de fazer desaparecer
+                setTimeout(() => {
+                    if (entry.target.classList.contains('show-carousel')) {
+                        entry.target.classList.remove('show-carousel');
+                    }
+                }, stableVisibility);
+            }
+        });
+    }, {
+        threshold: 0.5 // Só reage quando mais de 50% do elemento está visível
+    });
 
-// setInterval( function(){
-//     nextImage();
-// }, 4000)
+    // Seleciona todos os elementos com a classe .hidden-carousel
+    const hiddenElements = document.querySelectorAll('.hidden-carousel');
 
-// function nextImage(){
-//     count++;
-//     if(count > 4){
-//         count = 1;
-//     }
-
-//     document.getElementById("radio"+count).checked = true;
-// }
-
-//opacidade do scroll
-
-const observers = {}; // Guarda os observers criados por threshold
-
-function getObserver(threshold) {
-    if (!observers[threshold]) {
-        observers[threshold] = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }  else {
-                    entry.target.classList.remove('show');
-                }
-            });
-        }, { threshold: parseFloat(threshold) });
-    }
-    return observers[threshold];
-}
-
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => {
-    const threshold = el.dataset.threshold || '0.5'; // padrão 0.5 se não definido
-    const observer = getObserver(threshold);
-    observer.observe(el);
+    // Começa a observar os elementos
+    hiddenElements.forEach(el => {
+        observer.observe(el);
+    });
 });
 
 
