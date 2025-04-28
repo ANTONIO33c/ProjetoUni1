@@ -1,10 +1,19 @@
+/* zerando tudo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+
 /* Style Background Site */
 body{
     background-color: rgb(26, 26, 26);
 }
 .video-bg {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     z-index: -1;
@@ -128,6 +137,7 @@ header {
     background-color: rgba(36, 37, 42, 0.7); /* Um tom mais escuro com transparência */
     box-shadow: 0px 3px 10px rgba(70, 70, 70, 0.5);
     border-bottom: 1px solid white;
+    width: 100%;
 
 
     
@@ -165,7 +175,7 @@ header {
     margin: 0 15px;
 }
 
-.nav-link {
+.nav-link{
     text-decoration: none;
     font-size: 1.25rem;
     color: #fff;
@@ -299,35 +309,6 @@ dialog button {
     margin-top: 1rem;
 }
 
-/* Style Cards */
- .Cards
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-   
-}
-.Cards > *:not(:last-child) {
-    margin-right: 25px; /* Aplica o espaçamento apenas aos elementos, exceto o último */
- }
-.card {
-    background-color: #2C2F3D; 
-    color: #fff; 
-    width: 22rem; 
-    height: auto;
-    padding: 20px;
-    border-radius: 12px; 
-    transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.10);
-}
-.card-img-top{
-    border-radius: 8%;
-
-}
-
 /* Slider area */
 
 .hidden-carousel {
@@ -341,35 +322,20 @@ dialog button {
     transform: translateY(0); /* Remove a transformação de movimento */
 }
 
-.content-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh; 
-    padding: 50px;
+
+.swiper-button-prev{
+color: #000000;
+}
+.swiper-button-next
+{
+   color: #000000; 
 }
 
-
-
-
-/* .navigation-auto div{
-    border: 2px solid #20a6ff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-} */
-
-.navigation-auto {
-    position: absolute;
-    bottom: 20px;
+.swiper-slide img
+{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
 }
-
-/* end SLider area */
+/*Fim Slider */
 
 @media screen and (max-width: 730px) {
     .Cards

@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gustavo | Milhas</title>
 
-       <!-- link bootstrap -->
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <!-- Link do Swiper CSS -->
+<link
+rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <!-- Referencia o arquivo.css do site -->
     <link rel="stylesheet" href="css/Style.css">
     <!-- Icon window -->
@@ -124,83 +126,26 @@
     <div style="height: 5vh;"></div>
        
                 <br>
-                <br>
-        <!-- <div class="Cards ">
-            <div class="card">
-                <img class="card-img-top" src="images/card-PE.jpg" alt="Imagem de capa do card" onclick="openModal('FernandoDeNoronha')">
-                <div class="card-body">
-                    <h5>Fernando de Noronha</h5>
-                    <p class="card-text">Pernanbuco, Brasil</p>
-                </div>
-                </div>
-                <br>
-                <div class="card">
-                <img class="card-img-top" src="images/Card-sao-paulo.jpg" alt="Imagem de capa do card" onclick="openModal('SaoPaulo')">
-                <div class="card-body">
-                    <h5>São Paulo</h5>
-                    <p class="card-text">São Paulo, Brasil</p>
-                </div>
-                </div>
-                <br>
-                <div class="card">
-                <img class="card-img-top" src="images/card-brasilia.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5>Brasilia</h5>
-                    <p class="card-text">Distito Federal, Brasil</p>
-                </div>
-                </div>
-                <br>
-                <div class="card">
-                <img class="card-img-top" src="images/card-rio-de-janeiro.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5>Rio de Janeiro</h5>
-                    <p class="card-text">Rio de Janeiro, Brasil</p>
-                </div>
-                </div>
-
-                    
-        </div> -->
-
-       
-
-
+     
         <div class="hidden-carousel">
-            <div id="banners" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#banners" data-slide-to="0" class="active"></li>
-                    <li data-target="#banners" data-slide-to="1"></li>
-                    <li data-target="#banners" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="Assets/images/FernandoDeNoronhaImages.jpg" alt="" class="center-block">
-                    </div>
-                    <div class="item ">
-                        <img src="Assets/images/RioDeJaneiroImage.jpeg" alt="" class="center-block">
-                    </div>
-                    <div class="item ">
-                        <img src="Assets/images/SãoPauloImage.jpeg" alt="" class="center-block">
-                    </div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="Assets/images/RioDeJaneiroImage.jpeg" /></div>
+                  <div class="swiper-slide"><img src="Assets/images/FernandoDeNoronhaImages.jpg" /></div>
+                  <div class="swiper-slide"><img src="Assets/images/SãoPauloImage.jpeg" /></div>
                 </div>
-                <a href="#banners" class="left carousel-control" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a href="#banners" class="right carousel-control" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
-            </div>
+                 <!-- Botões de navegação -->
+                  <div class="buttons-navigation"></div>
+                 <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                </div>
+               
+              </div>
             <br>
         </div>
-            
-            
-
-
-        
+     <br>
         <br>
-        <br>
-        <!-- <section class="garantia">
+        <section class="garantia">
             <div class="container">
               <h2 class="garantia-titulo">🔒 Garantia e Segurança</h2>
               <p class="garantia-texto">
@@ -212,17 +157,11 @@
                 Sua viagem com <strong>economia e tranquilidade</strong>.
               </p>
             </div>
-          </section> -->
-
-    
-    <!-- Referencia o Scrips.js do bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+          </section>
     
 </body>
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="js/bootstrap.min.js"></script>
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- JS -->
    <script src="js/Script.js"></script>
   

@@ -35,16 +35,21 @@ function menuShow() {
     }
 }
 
-//Function Carousel
+//Function Carousel com a biblioteca Swiper JS
+const swiper = new Swiper(".swiper", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 1,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 
-$(document).on('ready', function() {
-    $(".regular").slick({
-        dots: true,
-        infinity: true,
-        slidesToShow: 3,
-        slidesToScroll: 3
-    });
-});
+//   Fim Carousel 
 window.addEventListener('load', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
