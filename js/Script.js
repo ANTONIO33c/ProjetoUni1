@@ -86,6 +86,75 @@ window.addEventListener('load', () => {
     });
 });
 
+// Controlador de animação avião
+function openPopupAndShowAirplane(id, event) {
+    const airplane = document.querySelector('.airplane');
+    const popup = document.getElementById(id);
+    const backdrop = popup.querySelector('dialog::backdrop');
 
+    // Inicializa o avião no ponto de origem
+    airplane.style.left = `0px`;
+    airplane.style.top = `0px`;
+    airplane.style.transform = 'none';
+    airplane.style.transition = 'none';
+    airplane.style.display = 'block';
 
+    // Inicializa o popup com opacidade 0 para aplicar fade-in
+    popup.style.opacity = '0';
+    popup.style.transition = 'opacity 0.5s ease-out';
 
+    // Força o reflow para garantir que a animação de transição seja aplicada
+    void airplane.offsetWidth;
+
+    // Inicia a animação do avião cruzando a tela
+    setTimeout(() => {
+        // Calcula a posição final do avião (canto inferior direito da tela)
+        const targetX = window.innerWidth - airplane.offsetWidth;
+        const targetY = window.innerHeight - airplane.offsetHeight;
+
+        // Inicia a transição do avião para o destino final
+        airplane.style.transition = 'transform 2s ease-out';
+        airplane.style.transform = `translate(${targetX}px, ${targetY}px)`; // Movimento diagonal
+
+        // Depois que o avião chegar no canto inferior direito, abre o popup com fade-in
+        setTimeout(() => {
+            // Exibe o popup com fade-in (opacidade vai de 0 para 1)
+            popup.showModal(); // Exibe o popup
+            popup.style.opacity = '1'; // Inicia a transição de opacidade para 1 (visível)
+        }, 1000); // Atraso de 3 segundos para aguardar a animação do avião
+    }, 10); // Pequeno delay para garantir que a animação seja aplicada
+
+    // Adiciona evento para fechar o popup quando clicar fora
+    document.addEventListener('click', function closeOnClickOutside(event) {
+        // Verifica se o clique foi fora da box e no backdrop
+        if (!popup.contains(event.target) && event.target === backdrop) {
+            closePopup(id);
+            document.removeEventListener('click', closeOnClickOutside); // Remove o ouvinte de evento após o clique
+        }
+    });
+}
+
+function closePopup(id) {
+    const popup = document.getElementById(id);
+    const airplane = document.querySelector('.airplane');
+
+    popup.close();
+
+    // Prepara para saída com transição de posição
+    airplane.style.transition = 'transform 1s ease-in';
+    airplane.style.transform += ' translate(600px, 600px)'; // movimento diagonal
+
+    // Após movimento, inicia fade-out
+    setTimeout(() => {
+        airplane.style.transition = 'opacity 0.5s ease-in';
+        airplane.style.opacity = '0';
+    }, 1000); // espera o movimento terminar (1s)
+
+    // Depois do fade-out, reseta
+    setTimeout(() => {
+        airplane.style.display = 'none';
+        airplane.style.transform = 'none';
+        airplane.style.transition = 'none';
+        airplane.style.opacity = '1';
+    }, 1500); // espera o fade-out (0.5s) após o movimento
+}

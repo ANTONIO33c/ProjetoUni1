@@ -279,35 +279,69 @@ header {
 
 /* Fim quebra de linha/fonte */
 
-dialog {
-    width: 80%;
-    max-width: 600px;
-    padding: 2rem;
+
+.popup-dialog {
+    background: none;
     border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    margin: 0;
-    max-height: 80vh;
-    overflow-y: auto;
 }
+  
+.popup-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+  
+.popup-box {
+    background-image: url('../images/Popup.png');
+    background-size: 100% 100%; /* Deforma a imagem para caber no conteúdo */
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 6rem 4rem; /* Aumente conforme o espaço interno da "nuvem" */
+    color: white;
+    width: auto;
+    max-width: 150vw;
+    box-sizing: border-box;
+    text-align: center;
+}
+  
+.popup-content p {
+    margin-bottom: 3%;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 10%;
+}
+  
 
-dialog::backdrop{
-background-color: rgba(0, 0, 0, 0.8); /* Mais escuro - 70% */
-}
-dialog button {
-    padding: 0.5rem 1rem;
-    background-color: #333;
+.popup-content button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.2rem;
+    background-color: #003366;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
 }
+
+@media screen and (max-width: 810px){
+    .popup-box{
+        background-image: url('../images/Popup_Mobile.png');
+        background-size: 100% 100%; /* Deforma a imagem para caber no conteúdo */
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 6rem 4rem; /* Aumente conforme o espaço interno da "nuvem" */
+        color: white;
+        width: auto;
+        max-width: 90vw;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+ 
 
 /* Slider area */
 
@@ -455,6 +489,72 @@ justify-content: center;
 /* fim reposividade title */
 /* fim estilização abaixo dos cartas */
 
+/* Animação avião */
 
+@keyframes flyIn {
+    0% {
+        transform: translateX(-100%) translateY(-100%);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes flyOut {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%);
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 340px;
+
+    background-image: url('/mnt/data/Popup.png'); /* Caminho para sua imagem */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border: none;
+    padding: 40px 60px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+
+    color: #fff; /* Ajuste a cor do texto para boa visibilidade */
+    font-weight: bold;
+}
+
+.airplane {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    display: none;
+    transition: transform 1s ease-out;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.airplane.active {
+    animation: flyIn 1s forwards;
+}
+
+.airplane.flyOut {
+    animation: flyOut 1s forwards;
+}
 
 /* fim estilização */

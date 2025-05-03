@@ -32,8 +32,8 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
     <nav class="nav-bar">
         <div class="nav-list">
             <ul class="list-item">
-                <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('OquesãoMilhas')">O que são Milhas</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('JaPassouPorIsso')">Já passou por isso?</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('OquesãoMilhas', event)">O que são Milhas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('JaPassouPorIsso', event)">Já passou por isso?</a></li>
                 <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
             </ul>
         </div>
@@ -46,7 +46,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
     </nav>
     <div class="mobile-menu">
         <ul>
-            <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('OquesãoMilhas')">O que são Milhas</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('OquesãoMilhas', event)">O que são Milhas</a></li>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('JaPassouPorIsso')">Já passou por isso?</a></li>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
         </ul>
@@ -61,34 +61,47 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         <a href="#header"></a>
      </div>
     <!-- Pop Up/Modal -->
-    <dialog id="OquesãoMilhas">
-            <p> Essas milhas podem ser acumuladas de várias maneiras:
-                Viagens aéreas: Ao voar com uma companhia aérea ou suas parceiras, você ganha milhas com base na distância percorrida, no valor do bilhete, ou no tipo de classe de serviço (econômica, executiva, etc.).
-                
-                Compras: Algumas lojas ou serviços oferecem programas de recompensas que acumulam milhas quando você compra  rodutos ou serviços.
-                
-                Cartões de crédito: Muitos cartões de crédito oferecem milhas como parte do programa de recompensas, que podem ser acumuladas a cada compra feita.
-                
-                Essas milhas, acumuladas ao longo do tempo, podem ser trocadas por passagens, hospedagens, produtos ou outras vantagens, dependendo do programa de fidelidade .</p>
-            <button onclick="closeModal('OquesãoMilhas')">Fechar</button>
+     
+    <dialog id="OquesãoMilhas" class ="popup-dialog">
+        <div class="popup-box">
+            <div class="popup-content">
+                <p> Essas milhas podem ser acumuladas de várias maneiras:
+                    Viagens aéreas: Ao voar com uma companhia aérea ou suas parceiras, você ganha milhas com base na distância percorrida, no valor do bilhete, ou no tipo de classe de serviço (econômica, executiva, etc.).
+                    
+                    Compras: Algumas lojas ou serviços oferecem programas de recompensas que acumulam milhas quando você compra  rodutos ou serviços.
+                    
+                    Cartões de crédito: Muitos cartões de crédito oferecem milhas como parte do programa de recompensas, que podem ser acumuladas a cada compra feita.
+                    
+                    Essas milhas, acumuladas ao longo do tempo, podem ser trocadas por passagens, hospedagens, produtos ou outras vantagens, dependendo do programa de fidelidade .</p>
+                <button onclick="closePopup('OquesãoMilhas')">Fechar</button>
+            </div>
+        </div>
     </dialog>
-    <dialog id="JaPassouPorIsso">
-        <p>Toda vez que vou viajar, sinto que as passagens e hotéis são muito caros;
-            Vejo meus amigos viajando de graça e eu continuo pagando caro em passagens, hotéis, aluguel de carro;
-            Me sinto perdido quando o assunto é milhas, é muita informação e não tenho paciência de olhar nem conhecer;
-            Tenho uma boa renda, mas não consigo acessar os melhores cartões;
-            Gasto muito no cartão de crédito e não sei para onde vão meus pontos, nunca aumentam;
-            Não consigo me organizar com clubes e programas, sempre acabo deixando meus pontos expirar:
-            Não sei quanto valem as minhas milhas, fico com pena de usar e com receio de fazer um mau negócio;
-            Não consigo viajar com conforto diferenciado, com salas VIP, upgrades, embarques prioritários,
-            Escolha de assentos e bagagens gratuitas;
-            Não sei quando ocorrem as promoções nem se são boas, nunca sei o melhor momento de transferir;
-            Prefiro o cashback ou trocar meus pontos por produtos por que tenho a sensação de que não desperdicei;</p>
-        <button onclick="closeModal('JaPassouPorIsso')">Fechar</button>
+    <dialog id="JaPassouPorIsso" class ="popup-dialog">
+        <div class="popup-box">
+            <div class="popup-content">
+                <p>Toda vez que vou viajar, sinto que as passagens e hotéis são muito caros;
+                    Vejo meus amigos viajando de graça e eu continuo pagando caro em passagens, hotéis, aluguel de carro;
+                    Me sinto perdido quando o assunto é milhas, é muita informação e não tenho paciência de olhar nem conhecer;
+                    Tenho uma boa renda, mas não consigo acessar os melhores cartões;
+                    Gasto muito no cartão de crédito e não sei para onde vão meus pontos, nunca aumentam;
+                    Não consigo me organizar com clubes e programas, sempre acabo deixando meus pontos expirar:
+                    Não sei quanto valem as minhas milhas, fico com pena de usar e com receio de fazer um mau negócio;
+                    Não consigo viajar com conforto diferenciado, com salas VIP, upgrades, embarques prioritários,
+                    Escolha de assentos e bagagens gratuitas;
+                    Não sei quando ocorrem as promoções nem se são boas, nunca sei o melhor momento de transferir;
+                    Prefiro o cashback ou trocar meus pontos por produtos por que tenho a sensação de que não desperdicei;</p>
+                <button onclick="closePopup('JaPassouPorIsso')">Fechar</button>
+            </div>
+        </div> 
     </dialog>
-    <dialog id="NossoServicos">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dignissimos repellendus assumenda illo deleniti optio expedita porro maxime? Id aspernatur recusandae debitis quas amet molestiae quisquam culpa nisi omnis aperiam.
-        <button onclick="closeModal('NossoServicos')">Fechar</button>
+    <dialog id="NossoServicos" class="popup-dialog">
+        <div class="popup-box">
+            <div class="popup-content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dignissimos repellendus assumenda illo deleniti optio expedita porro maxime? Id aspernatur recusandae debitis quas amet molestiae quisquam culpa nisi omnis aperiam.
+                <button onclick="closeModal('NossoServicos')">Fechar</button>
+            </div>
+        </div>
     </dialog>
     <dialog id="FaleConosco">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint sed perferendis possimus facere similique beatae expedita voluptates saepe. Odio fugit ratione voluptates saepe ipsam et, vitae quo iusto natus deleniti.
@@ -110,6 +123,10 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         pontos turisticos!
         <button oneclick="closeModal('riodejaneiro')">Fechar</button>
     </dialog>
+
+    <div class="airplane">
+        <img src="images/avião.png" alt="airplane">
+    </div>
 
     <div style="height: 40vh;"></div> 
         <section>
