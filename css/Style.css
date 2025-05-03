@@ -183,52 +183,25 @@ header {
     font-family: "Libre Baskerville", serif;
 }
 
-/*   Inicio Social media icons */
-/* Estilo para os ícones sociais */
-.social-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px; 
-    height: 50px; 
-    margin-right: 15px; 
-    background-color: #f2f2f2; 
-    border-radius: 50%;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.login-button button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #00507e;
+    font-family: "Libre Baskerville", serif;
+}
+
+.login-button button:hover
+{
+    background-color: #00114b;
+}
+
+.login-button button a {
     text-decoration: none;
-    color: #fff; /* Cor do ícone */
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
-
-/* Hover dos ícones sociais */
-.social-icon:hover {
-    transform: scale(1.1); 
-}
-
-/* Cor e fundo para o Instagram */
-.instagram-icon {
-    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); /* Degradê do Instagram */
-}
-
-.instagram-icon:hover {
-    background: linear-gradient(45deg, #DD2A7B, #F58529, #8134AF); /* Inversão do degradê no hover */
-}
-
-/* Cor e fundo para o WhatsApp */
-.whatsapp-icon {
-    background-color: #25D366; 
-}
-
-.whatsapp-icon:hover {
-    background-color: #128C7E;
-}
-
-
-.instagram-icon i, .whatsapp-icon i {
-    font-size: 24px; /* Tamanho do ícone */
-}
-/* Fim Social Media Icons */
-
-
 
 .mobile-menu-icon {
     display: none;
@@ -250,7 +223,7 @@ header {
     .nav-item {
         display: none;
     }
-    .social-media-icons {
+    .login-button {
         display: none;
     }
     .mobile-menu-icon {
@@ -271,14 +244,9 @@ header {
         display: block;
         padding-top: 1.2rem;
     }
-    .mobile-menu .social-media-icons {
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        gap: 50px; 
-        width: 100%; 
-        padding: 20px 0; 
-        margin-left: 1vw;
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
     }
     .mobile-menu .login-button button {
         width: 100%;
@@ -311,6 +279,35 @@ header {
 
 /* Fim quebra de linha/fonte */
 
+dialog {
+    
+    width: 100%;
+    max-width: 950px;
+    padding: 2rem;
+    border: none;
+    border-radius: 8px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    margin: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+dialog::backdrop{
+background-color: rgba(0, 0, 0, 0.8); /* Mais escuro - 70% */
+}
+dialog button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
 
 .popup-dialog {
     background: none;
@@ -342,9 +339,9 @@ header {
 }
   
 .popup-content p {
-    margin-bottom: 3%;
-    margin-top: 5%;
-    margin-left: 15%;
+    margin-bottom: 1rem;
+    margin-top: 14%;
+    margin-left: 10%;
     margin-right: 10%;
 }
   
@@ -389,90 +386,18 @@ header {
 }
 
 
-.swiper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 2rem 0;
+.swiper-button-prev{
+color: #000000;
 }
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.swiper-slide img {
-    width: 85vw; 
-    object-fit: cover;
-    display: block;
-    margin: 0 auto; 
-    border-radius: 10px; 
-}
-
-/* Botões dentro do banner */
-.swiper-button-prev,
-.swiper-button-next {
-    background-color: rgba(70, 69, 69, 0.9); 
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    background-color: rgb(7, 127, 255);
-    transform: translateY(-50%) scale(1.1);
-}
-
-/* Posicionamento alinhado com as bordas da imagem */
-.swiper-button-prev {
-    left: 7.5vw;
-}
-
-.swiper-button-next {
-    right: 7.5vw;
-}
-
-/* resposividae button */
-@media (max-width: 772px) {
 .swiper-button-next
 {
-    width: 40px;
-    height: 40px;
+   color: #000000; 
 }
-}
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    .swiper-button-prev,
-    .swiper-button-next {
-        font-size: 16px; 
-        width: 55px; 
-        height: 55px;
-    }
 
-    /* Ajusta o tamanho da imagem no swiper */
-    .swiper-slide img {
-        width: 90%;
-    }
+.swiper-slide img
+{
+    width: 100%;
 }
-  
 /*Fim Slider */
 
 @media screen and (max-width: 730px) {

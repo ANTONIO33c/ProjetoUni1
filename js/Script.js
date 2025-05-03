@@ -90,7 +90,6 @@ window.addEventListener('load', () => {
 function openPopupAndShowAirplane(id, event) {
     const airplane = document.querySelector('.airplane');
     const popup = document.getElementById(id);
-    const backdrop = popup.querySelector('dialog::backdrop');
 
     // Inicializa o avião no ponto de origem
     airplane.style.left = `0px`;
@@ -123,15 +122,7 @@ function openPopupAndShowAirplane(id, event) {
             popup.style.opacity = '1'; // Inicia a transição de opacidade para 1 (visível)
         }, 1000); // Atraso de 3 segundos para aguardar a animação do avião
     }, 10); // Pequeno delay para garantir que a animação seja aplicada
-
-    // Adiciona evento para fechar o popup quando clicar fora
-    document.addEventListener('click', function closeOnClickOutside(event) {
-        // Verifica se o clique foi fora da box e no backdrop
-        if (!popup.contains(event.target) && event.target === backdrop) {
-            closePopup(id);
-            document.removeEventListener('click', closeOnClickOutside); // Remove o ouvinte de evento após o clique
-        }
-    });
+    
 }
 
 function closePopup(id) {
