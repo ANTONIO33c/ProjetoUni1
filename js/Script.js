@@ -40,6 +40,11 @@ const swiper = new Swiper(".swiper", {
     loop: true,
     spaceBetween: 10,
     slidesPerView: 1,
+    effect: "fade", // Aplica o efeito de fade
+    fadeEffect: {
+      crossFade: true, // Mistura suavemente os slides
+    },
+    speed: 1000,
     pagination: {
       el: ".swiper-pagination",
     },
@@ -47,8 +52,24 @@ const swiper = new Swiper(".swiper", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    autoplay: {
+      delay: 2000, // Tempo entre os slides
+      disableOnInteraction: false,
+    },
   });
 
+//   legenda banner 
+const captionElement = document.getElementById("swiper-caption");
+
+function updateCaption() {
+  const activeSlide = swiper.slides[swiper.activeIndex];
+  const caption = activeSlide.getAttribute("data-caption");
+  captionElement.textContent = caption || "";
+}
+
+updateCaption(); // Define legenda inicial
+
+swiper.on("slideChange", updateCaption); // Atualiza a cada troca de slide
 //   Fim Carousel 
 window.addEventListener('load', () => {
     const observer = new IntersectionObserver((entries) => {
