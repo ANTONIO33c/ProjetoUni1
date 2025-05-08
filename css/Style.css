@@ -625,7 +625,7 @@ justify-content: center;
 
 @keyframes flyIn {
     0% {
-        transform: translateX(-100%) translateY(-100%);
+        transform: translateX(-100%) translateY(100%);
     }
     100% {
         transform: translateX(0) translateY(0);
@@ -637,7 +637,7 @@ justify-content: center;
         transform: translateX(0) translateY(0);
     }
     100% {
-        transform: translateX(100%) translateY(100%);
+        transform: translateX(100%) translateY(-100%);
     }
 }
 
@@ -687,6 +687,42 @@ justify-content: center;
 
 .airplane.flyOut {
     animation: flyOut 1s forwards;
+}
+
+/* Whatsapp Button */
+
+@keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, 100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s;
+    animation: fadeUp 0.5s ease-out;
+}
+  
+.whatsapp-button:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+  
+.whatsapp-button img {
+    width: 80vw;
+    max-width: 405px;
+    height: auto;
+    display: flex;
 }
 
 /* fim estilização */
