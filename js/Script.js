@@ -115,35 +115,33 @@ function openPopupAndShowAirplane(id, event) {
 
     // Inicializa o avião no ponto de origem
     airplane.style.left = `0px`;
-    airplane.style.top = `0px`;
-    airplane.style.transform = 'none';
-    airplane.style.transition = 'none';
-    airplane.style.display = 'block';
+airplane.style.top = `${window.innerHeight - airplane.offsetHeight}px`;
+airplane.style.transition = 'none';
+airplane.style.display = 'block';
 
-    // Inicializa o popup com opacidade 0 para aplicar fade-in
+/* Inicializa o popup com opacidade 0 para aplicar fade-in */
     popup.style.opacity = '0';
     popup.style.transition = 'opacity 0.5s ease-out';
 
-    // Força o reflow para garantir que a animação de transição seja aplicada
-    void airplane.offsetWidth;
+// Força o reflow
+void airplane.offsetWidth;
 
-    // Inicia a animação do avião cruzando a tela
+setTimeout(() => {
+    // Destino: canto superior direito
+    const targetX = window.innerWidth - airplane.offsetWidth;
+    const targetY = 0;
+
+    // Move com transição usando top/left
+    airplane.style.transition = 'left 1.5s ease-out, top 1.5s ease-out';
+    airplane.style.left = `${targetX}px`;
+    airplane.style.top = `${targetY}px`;
+
+    // Abre o popup com fade-in após a animação
     setTimeout(() => {
-        // Calcula a posição final do avião (canto inferior direito da tela)
-        const targetX = window.innerWidth - airplane.offsetWidth;
-        const targetY = window.innerHeight - airplane.offsetHeight;
-
-        // Inicia a transição do avião para o destino final
-        airplane.style.transition = 'transform 2s ease-out';
-        airplane.style.transform = `translate(${targetX}px, ${targetY}px)`; // Movimento diagonal
-
-        // Depois que o avião chegar no canto inferior direito, abre o popup com fade-in
-        setTimeout(() => {
-            // Exibe o popup com fade-in (opacidade vai de 0 para 1)
-            popup.showModal(); // Exibe o popup
-            popup.style.opacity = '1'; // Inicia a transição de opacidade para 1 (visível)
-        }, 1000); // Atraso de 3 segundos para aguardar a animação do avião
-    }, 10); // Pequeno delay para garantir que a animação seja aplicada
+        popup.showModal();
+        popup.style.opacity = '1';
+    }, 1000); // tempo igual ao da transição
+}, 10);// Pequeno delay para garantir que a animação seja aplicada
 
     // Adiciona evento para fechar o popup quando clicar fora
     document.addEventListener('click', function closeOnClickOutside(event) {
@@ -154,28 +152,32 @@ function openPopupAndShowAirplane(id, event) {
         }
     });
 }
-
 function closePopup(id) {
     const popup = document.getElementById(id);
     const airplane = document.querySelector('.airplane');
 
     popup.close();
 
-    // Prepara para saída com transição de posição
-    airplane.style.transition = 'transform 1s ease-in';
-    airplane.style.transform += ' translate(600px, 600px)'; // movimento diagonal
+    // Move o avião para fora da tela (diagonalmente para cima e à direita)
+    const exitX = window.innerWidth;
+    const exitY = -airplane.offsetHeight;
 
-    // Após movimento, inicia fade-out
+    airplane.style.transition = 'left 1s ease-in, top 1s ease-in';
+    airplane.style.left = `${exitX}px`;
+    airplane.style.top = `${exitY}px`;
+
+    // Após o movimento, faz o fade-out
     setTimeout(() => {
-        airplane.style.transition = 'opacity 0.5s ease-in';
+        airplane.style.transition = 'opacity 0.1s ease-in';
         airplane.style.opacity = '0';
-    }, 1000); // espera o movimento terminar (1s)
+    }, 1000); // tempo da transição de movimento
 
-    // Depois do fade-out, reseta
+    // Depois do fade-out, reseta o estado para permitir nova entrada
     setTimeout(() => {
         airplane.style.display = 'none';
-        airplane.style.transform = 'none';
-        airplane.style.transition = 'none';
+        airplane.style.left = '0px';
+        airplane.style.top = `${window.innerHeight - airplane.offsetHeight}px`;
         airplane.style.opacity = '1';
-    }, 1500); // espera o fade-out (0.5s) após o movimento
+        airplane.style.transition = 'none';
+    }, 1500);
 }
