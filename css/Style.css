@@ -138,15 +138,16 @@ header {
     left: 0;
     background-color: rgba(36, 37, 42, 0.7); /* Um tom mais escuro com transparência */
     box-shadow: 0px 3px 10px rgba(70, 70, 70, 0.5);
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
     width: 100%;
     z-index: 1000; /* Garante que fique acima dos outros elementos */
 }
 
 .nav-bar {
     display: flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
     padding: 1.5rem 6rem;
+    margin-left: 20%;
 }
 
 .logo {
@@ -481,14 +482,14 @@ dialog button {
 .swiper-caption {
     margin-top: 20px;
     padding: 14px 28px;
-    max-width: 640px;
+    max-width: 85%;
     margin-left: auto;
     margin-right: auto;
-    background: rgba(10, 25, 47, 0.85); /* Azul escuro com transparência */
+    background: rgba(43, 43, 43, 0.98); /* Azul escuro com transparência */
     color: #dbeafe; /* Azul claro suave (ex: tailwind slate-100/blue-100) */
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    border-left: 4px solid #2563eb; /* Azul mais vivo para destaque */
+    border-left: 4px solid #dfdfdf; /* Azul mais vivo para destaque */
     border-radius: 6px;
     text-align: left;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -524,6 +525,10 @@ dialog button {
     .swiper-button-prev {
       display: none;
     }
+    .swiper-caption
+    {
+        font-size: 1.1rem;
+    }
   }
   
 /*Fim Slider */
@@ -553,32 +558,48 @@ dialog button {
 
 /* logo estilização */
 /* Estilo da seção Garantia */
-.garantia {
-    background-color: rgba(36, 37, 42, 0.6);
-    padding: 60px 20px;
+.garantia-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Isso permite que eles quebrem em telas menores */
+  }
+  
+  .garantia-item {
+    flex: 1 1 30%;
     text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    color: #fff;
   }
   
-  .garantia .container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .garantia-titulo {
-    font-size: 28px;
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-  
-  .garantia-texto {
-    font-size: 18px;
-    color: #c0c0c0;
+  .garantia-imagem img {
+    width: 60px;
+    height: 60px;
     margin-bottom: 15px;
-    line-height: 1.6;
   }
   
-  .garantia strong {
-    color: #0077cc;
+  .garantia-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .garantia-lista li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  /* Responsivo: empilha os itens em telas pequenas */
+  @media (max-width: 768px) {
+    .garantia-wrapper {
+      flex-direction: column;
+    }
+  
+    .garantia-item {
+      flex: 1 1 100%;
+    }
   }
   /* inicio estilização rodapé */
   #footer-link {
@@ -601,9 +622,14 @@ dialog button {
   width: 150px;
   margin-bottom: 20px;
 }
+#footer_social_media
+{
+    display: flex;
+    flex-direction: row;
+}
 
 #footer_social_media a {
-  font-size: 1.8rem;
+  font-size: 3rem;
   margin-right: 15px;
   transition: transform 0.3s ease;
 }
@@ -620,7 +646,7 @@ dialog button {
 }
 
 .footer-link i {
-    font-size: 24px; /* Tamanho opcional */
+    font-size: 30px; /* Tamanho opcional */
     transition: color 0.3s;
 }
 /* color icon instagram */

@@ -53,7 +53,7 @@ const swiper = new Swiper(".swiper", {
       prevEl: ".swiper-button-prev",
     },
     autoplay: {
-      delay: 2000, // Tempo entre os slides
+      delay: 12000, // Tempo entre os slides
       disableOnInteraction: false,
     },
   });
