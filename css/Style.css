@@ -10,6 +10,7 @@
 /* Style Background Site */
 body{
     background-color: rgb(26, 26, 26);
+    overflow-x: hidden;
 }
 .video-bg {
     position: absolute;
@@ -388,7 +389,7 @@ dialog button {
     cursor: pointer;
 }
 
-@media screen and (max-width: 810px){
+@media screen and (max-width: 600px){
     .popup-box{
         background-image: url('../images/Popup_Mobile.png');
         background-size: 100% 100%; /* Deforma a imagem para caber no conteúdo */
@@ -402,7 +403,24 @@ dialog button {
         text-align: center;
     }
 }
+
+@media screen and (max-width: 810px){
+    .popup-box{
+        background-image: url('../images/Popup-736x575.png');
+    }
+}
+
+@media screen and (max-width: 580px){
+    .popup-box{
+        background-image: url('../images/Popup-510x835.png');
+    }
+}
  
+@media screen and (max-width: 480px){
+    .popup-box{
+        background-image: url('../images/Popup-439x835.png');
+    }
+}
 
 /* Slider area */
 
@@ -748,13 +766,15 @@ dialog button {
 }
 
 .airplane {
-    position: absolute;
+    position: fixed; /* <--- TROQUE de absolute para fixed */
     width: 100px;
     height: auto;
     display: none;
     transition: transform 1s ease-out;
     z-index: 2000;
     pointer-events: none;
+    left: 0;
+    bottom: 0;
 }
 
 .airplane.active {
@@ -781,24 +801,64 @@ dialog button {
 .whatsapp-button {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 5px;
     z-index: 9999;
     border-radius: 50%;
     padding: 10px;
     transition: transform 0.3s;
     animation: fadeUp 0.5s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
-  
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .whatsapp-button:hover {
-    transform: translateX(-50%) scale(1.1);
+    transform: scale(1.1);
 }
-  
+
 .whatsapp-button img {
-    width: 80vw;
-    max-width: 405px;
     height: auto;
-    display: flex;
+}
+
+/* Oculta a versão mobile por padrão */
+.whatsapp-img-mobile {
+    display: none;
+}
+
+.whatsapp-img-desktop{
+    max-width: 360px;
+}
+
+/* Mostra a imagem menor e oculta a grande no mobile */
+@media screen and (max-width: 720px) {
+    .whatsapp-button {
+        left: 70vw;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .whatsapp-button:hover {
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    .whatsapp-img-desktop {
+        display: none;
+    }
+
+    .whatsapp-img-mobile {
+        display: block;
+        width: 70px;
+    }
 }
 
 /* fim estilização */

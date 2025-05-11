@@ -72,40 +72,46 @@ updateCaption(); // Define legenda inicial
 swiper.on("slideChange", updateCaption); // Atualiza a cada troca de slide
 //   Fim Carousel 
 window.addEventListener('load', () => {
+    const visibilityStates = new WeakMap();
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // Defina um tempo mínimo de visibilidade para evitar flickering
-            const stableVisibility = 150; // 100ms de estabilidade para visibilidade
+            const el = entry.target;
 
-            // Verifica se o elemento está visível mais de 50% (threshold de 0.5)
-            if (entry.intersectionRatio > 0.5) {
-                // Espera um pequeno tempo para garantir estabilidade antes de fazer aparecer
-                setTimeout(() => {
-                    if (!entry.target.classList.contains('show-carousel')) {
-                        entry.target.classList.add('show-carousel');
-                    }
-                }, stableVisibility);
-            } else {
-                // Espera um pequeno tempo para garantir estabilidade antes de fazer desaparecer
-                setTimeout(() => {
-                    if (entry.target.classList.contains('show-carousel')) {
-                        entry.target.classList.remove('show-carousel');
-                    }
-                }, stableVisibility);
+            // Estado por elemento (armazenado com WeakMap para não poluir o DOM)
+            if (!visibilityStates.has(el)) {
+                visibilityStates.set(el, { isVisible: false });
+            }
+
+            const state = visibilityStates.get(el);
+            const isCurrentlyVisible = entry.isIntersecting && entry.intersectionRatio >= 0.5;
+
+            // A lógica agora é para adicionar a classe quando o elemento aparecer na tela
+            // e remover a classe apenas quando você começar a subir
+            if (isCurrentlyVisible && !state.isVisible) {
+                // O elemento entrou na tela ao descer
+                state.isVisible = true;
+                requestAnimationFrame(() => {
+                    el.classList.add('show-carousel');
+                });
+            } else if (!isCurrentlyVisible && state.isVisible && entry.boundingClientRect.top > 0) {
+                // O elemento saiu da tela ao subir
+                state.isVisible = false;
+                requestAnimationFrame(() => {
+                    el.classList.remove('show-carousel');
+                });
             }
         });
     }, {
-        threshold: 0.5 // Só reage quando mais de 50% do elemento está visível
+        threshold: 0.5, // Defina o threshold para 60% visível
     });
 
-    // Seleciona todos os elementos com a classe .hidden-carousel
-    const hiddenElements = document.querySelectorAll('.hidden-carousel');
-
-    // Começa a observar os elementos
-    hiddenElements.forEach(el => {
+    document.querySelectorAll('.hidden-carousel').forEach(el => {
         observer.observe(el);
     });
 });
+
+
 
 // Controlador de animação avião
 function openPopupAndShowAirplane(id, event) {
@@ -114,34 +120,25 @@ function openPopupAndShowAirplane(id, event) {
     const backdrop = popup.querySelector('dialog::backdrop');
 
     // Inicializa o avião no ponto de origem
-    airplane.style.left = `0px`;
-airplane.style.top = `${window.innerHeight - airplane.offsetHeight}px`;
-airplane.style.transition = 'none';
-airplane.style.display = 'block';
+ airplane.style.transition = 'none';
+    airplane.style.transform = 'translate(0, 0)';
+    airplane.style.display = 'block';
 
-/* Inicializa o popup com opacidade 0 para aplicar fade-in */
-    popup.style.opacity = '0';
-    popup.style.transition = 'opacity 0.5s ease-out';
+    // Força reflow
+    void airplane.offsetWidth;
 
-// Força o reflow
-void airplane.offsetWidth;
-
-setTimeout(() => {
-    // Destino: canto superior direito
-    const targetX = window.innerWidth - airplane.offsetWidth;
-    const targetY = 0;
-
-    // Move com transição usando top/left
-    airplane.style.transition = 'left 1.5s ease-out, top 1.5s ease-out';
-    airplane.style.left = `${targetX}px`;
-    airplane.style.top = `${targetY}px`;
-
-    // Abre o popup com fade-in após a animação
     setTimeout(() => {
-        popup.showModal();
-        popup.style.opacity = '1';
-    }, 1000); // tempo igual ao da transição
-}, 10);// Pequeno delay para garantir que a animação seja aplicada
+        const targetX = window.innerWidth - airplane.offsetWidth;
+        const targetY = -window.innerHeight + airplane.offsetHeight;
+
+        airplane.style.transition = 'transform 1.5s ease-out';
+        airplane.style.transform = `translate(${targetX}px, ${targetY}px)`;
+
+        setTimeout(() => {
+            popup.showModal();
+            popup.style.opacity = '1';
+        }, 1000);
+    }, 10);
 
     // Adiciona evento para fechar o popup quando clicar fora
     document.addEventListener('click', function closeOnClickOutside(event) {
