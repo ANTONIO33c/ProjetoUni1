@@ -187,7 +187,7 @@ header {
 
 /*   Inicio Social media icons */
 /* Estilo para os ícones sociais */
-.social-icon {
+/* .social-icon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -198,9 +198,9 @@ header {
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-decoration: none;
-    color: #fff; /* Cor do ícone */
-}
-
+    color: #fff; /* Cor do ícone
+    */
+ 
 /* Hover dos ícones sociais */
 .social-icon:hover {
     transform: scale(1.1); 
@@ -208,7 +208,21 @@ header {
 
 /* Cor e fundo para o Instagram */
 .instagram-icon {
-    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); /* Degradê do Instagram */
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #E1306C; /* Cor típica do Instagram */
+    color: white;
+    border-radius: 30px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.instagram-icon:hover {
+    background-color: #C13584; /* Tom mais escuro para hover */
+    transform: scale(1.05);
 }
 
 .instagram-icon:hover {
@@ -499,17 +513,16 @@ dialog button {
 /* legenda imagens */
 .swiper-caption {
     margin-top: 20px;
-    padding: 14px 28px;
+    padding: 10px 12px;
     max-width: 85%;
     margin-left: auto;
     margin-right: auto;
     background: rgba(43, 43, 43, 0.98); /* Azul escuro com transparência */
-    color: #dbeafe; /* Azul claro suave (ex: tailwind slate-100/blue-100) */
+    color: #dbeafe; 
     font-size: 1.3rem;
     font-weight: 500;
-    border-left: 4px solid #dfdfdf; /* Azul mais vivo para destaque */
+    border-left: 4px solid #dfdfdf; /* borda branca da direita */
     border-radius: 6px;
-    text-align: left;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: opacity 0.4s ease, transform 0.4s ease;
     opacity: 1;
@@ -547,7 +560,21 @@ dialog button {
     {
         font-size: 1.1rem;
     }
-  }
+    @media (max-width: 600px)
+    {
+        .swiper-caption
+        {
+            font-size: 1rem;
+        }
+    }
+    @media (max-width: 770px)
+    {
+        .swiper-caption
+        {
+            max-width: 90%;
+        }
+    }  
+}
   
 /*Fim Slider */
 
@@ -593,8 +620,8 @@ dialog button {
   }
   
   .garantia-imagem img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 15px;
   }
   

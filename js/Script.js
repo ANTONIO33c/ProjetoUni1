@@ -66,7 +66,6 @@ function updateCaption() {
   const caption = activeSlide.getAttribute("data-caption");
   captionElement.textContent = caption || "";
 }
-
 updateCaption(); // Define legenda inicial
 
 swiper.on("slideChange", updateCaption); // Atualiza a cada troca de slide
