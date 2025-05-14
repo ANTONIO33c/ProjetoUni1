@@ -147,8 +147,8 @@ header {
 .nav-bar {
     display: flex;
     justify-content:space-evenly;
-    padding: 1.5rem 6rem;
-    margin-left: 20%;
+    padding: 2rem 6rem;
+    margin-left: 35%;
 }
 
 .logo {
@@ -475,41 +475,6 @@ dialog button {
     border-radius: 10px; 
 }
 
-/* Botões dentro do banner */
-.swiper-button-prev,
-.swiper-button-next {
-    background-color: rgba(48, 48, 48, 0.9); 
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    background-color: rgb(7, 127, 255);
-    transform: translateY(-50%) scale(1.1);
-}
-
-/* Posicionamento alinhado com as bordas da imagem */
-.swiper-button-prev {
-    left: 7.5vw;
-}
-
-.swiper-button-next {
-    right: 7.5vw;
-}
 /* legenda imagens */
 .swiper-caption {
     margin-top: 20px;
@@ -620,8 +585,8 @@ dialog button {
   }
   
   .garantia-imagem img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 15px;
   }
   
@@ -862,14 +827,15 @@ dialog button {
     display: none;
 }
 
-.whatsapp-img-desktop{
-    max-width: 360px;
+.whatsapp-img-mobile {
+    display: block;
+    width: 100%;
 }
 
 /* Mostra a imagem menor e oculta a grande no mobile */
 @media screen and (max-width: 720px) {
     .whatsapp-button {
-        left: 70vw;
+        left: 80vw;
         right: auto;
         transform: translateX(-50%);
     }
@@ -878,14 +844,7 @@ dialog button {
         transform: translateX(-50%) scale(1.1);
     }
 
-    .whatsapp-img-desktop {
-        display: none;
-    }
-
-    .whatsapp-img-mobile {
-        display: block;
-        width: 70px;
-    }
+    
 }
 
 /* fim estilização */
