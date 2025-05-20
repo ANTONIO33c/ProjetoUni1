@@ -50,137 +50,6 @@ body{
     ); 
   pointer-events: none;
 }
-/* 
-.video-bg::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100;
-    height: 100%;
-    background-color: rgba(36, 37, 42, 0.4);
-} */
-
-/* Começo do style do accordion */
-#accordion{
-    padding: 0px;
-    margin: 0px;  
-    flex-direction:column;
-    gap: 8px;
-}
-
-#accordion{
-  margin:  2% 8% 0 7%;;
-  display: flex;
-  align-items:baseline;
-  justify-content: center;
- }
-
-
- .accordion{
-   background-color:  rgba(43, 43, 43, 0.98);
-   border-radius: 8px;
-   padding: 12px;
-   cursor: pointer;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-   width: 100%;
- }
-
- .accordion-header{
-    width: 100%;
-    border: none;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Libre Baskerville", serif;
-    font-size: 20px;
-    font-weight: 40px;
-    cursor: pointer;
-    color: rgb(255, 248, 248)
- }
-
- .accordion-header span{
-    max-width: 1000%;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
- }
-
-.accordion-body{
-    color: rgb(255, 248, 248);
-    font-size: 14px;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: opaciity .3s;
-    padding-top: 8px;
-}
-
-.accordion-body.active{
-    height: 100%;
-    opacity: 1;
-}
-
-.arrow{
-    transition: transfomr .2 linear;
-    min-width: 24px;
-}
-
-.accordion:has(.active) .arrow{
-    transform: rotate(180deg);
-}
-
-#saiba{
-    margin: 2% 8% 0 7%;
-    font-size: 50px;
-    font-weight: 50px;
-    color: rgb(255, 248, 248);
-}
-
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
-    #accordion {
-        margin: 2% 4% 0 4%;
-    }
-    
-    .accordion-header {
-        font-size: 18px;
-    }
-    
-    .accordion-header span {
-        max-width: 80%;
-    }
-    
-    .accordion-body {
-        font-size: 13px;
-    }
-    
-    #saiba {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 480px) {
-    #accordion {
-        margin: 2% 3% 0 3%;
-    }
-    
-    .accordion-header {
-        font-size: 16px;
-        flex-wrap: wrap;
-    }
-    
-    .accordion {
-        padding: 10px;
-    }
-    
-    #saiba {
-        font-size: 28px;
-    }
-}
-
-/* fim do style do accordion */
 
 @media (max-width: 768px) {
     .video-bg {
@@ -304,7 +173,8 @@ header {
     font-size: 1.25rem;
     color: #fff;
     font-weight: 400;
-    font-family: "Libre Baskerville", serif;
+   font-family: "Libre Baskerville", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 /*   Inicio Social media icons */
@@ -607,13 +477,13 @@ dialog button {
     background: rgba(43, 43, 43, 0.98); /* Azul escuro com transparência */
     color: #dbeafe; 
     font-size: 1.3rem;
-    font-weight: 500;
     border-left: 4px solid #dfdfdf; /* borda branca da direita */
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: opacity 0.4s ease, transform 0.4s ease;
     opacity: 1;
     transform: translateY(0);
+    font-family: "Libre Baskerville", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }  
 
 /* resposividae button */
@@ -714,8 +584,8 @@ dialog button {
   
   .garantia-lista {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    font-family: "Libre Baskerville", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
   }
   
   .garantia-lista li {
@@ -733,12 +603,135 @@ dialog button {
       flex: 1 1 100%;
     }
   }
+  /* Começo do style do accordion */
+#accordion{
+    padding: 0px;
+    margin: 0px;  
+    flex-direction:column;
+    gap: 8px;
+}
+
+#accordion{
+  margin:  2% 8% 0 7%;;
+  display: flex;
+  align-items:baseline;
+  justify-content: center;
+ }
+
+
+ .accordion{
+   background-color:  rgba(43, 43, 43, 0.98);
+   border-radius: 8px;
+   padding: 12px;
+   cursor: pointer;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   width: 100%;
+ }
+
+ .accordion-header{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    font-weight: 40px;
+    cursor: pointer;
+    color: rgb(255, 248, 248)
+ }
+
+ .accordion-header span{
+    max-width: 1000%;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+ }
+
+.accordion-body{
+    color: rgb(255, 248, 248);
+    font-size: 14px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opaciity .3s;
+    padding-top: 8px;
+}
+
+.accordion-body.active{
+    height: 100%;
+    opacity: 1;
+}
+
+.arrow{
+    transition: transfomr .2 linear;
+    min-width: 24px;
+}
+
+.accordion:has(.active) .arrow{
+    transform: rotate(180deg);
+}
+
+#saiba{
+     color: rgb(255, 248, 248);
+    font-family: "Libre Baskerville", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin: 2% 8% 0 7%;
+    font-weight: bold;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    #accordion {
+        margin: 2% 4% 0 4%;
+    }
+    
+    .accordion-header {
+        font-size: 18px;
+    }
+    
+    .accordion-header span {
+        max-width: 80%;
+    }
+    
+    .accordion-body {
+        font-size: 13px;
+    }
+    
+    #saiba {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    #accordion {
+        margin: 2% 3% 0 3%;
+    }
+    
+    .accordion-header {
+        font-size: 16px;
+        flex-wrap: wrap;
+    }
+    
+    .accordion {
+        padding: 10px;
+    }
+    
+    #saiba {
+        font-size: 28px;
+    }
+}
+
+/* fim do style do accordion */
+
   /* inicio estilização rodapé */
   #footer-link {
   background-color: #1111117a; /* Fundo escuro semitransparente */
   color: white;
   padding: 40px 0;
-  font-family: 'Arial', sans-serif;
+ font-family: "Libre Baskerville", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #footer-content {
@@ -822,7 +815,7 @@ dialog button {
   text-align: center;
   margin-top: 30px;
   padding-top: 20px;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
   /* fim estilização rodapé */
 /* Fim Reponsivo componentes */

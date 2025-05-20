@@ -33,6 +33,7 @@ function menuShow() {
         menuMobile.classList.add('open');
         document.querySelector('.icon').src = "images/close_white_36dp.svg";
     }
+    
 }
 
 //Function Carousel com a biblioteca Swiper JS
@@ -69,7 +70,30 @@ function updateCaption() {
 updateCaption(); // Define legenda inicial
 
 swiper.on("slideChange", updateCaption); // Atualiza a cada troca de slide
-//   Fim Carousel 
+//   Fim legenda
+
+//function rolagem
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Scroll suave até o destino
+        const targetId = this.getAttribute('href').substring(1); // remove o #
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Fecha o menu mobile, se estiver aberto
+        const menuMobile = document.querySelector('.mobile-menu');
+        if (menuMobile.classList.contains('open')) {
+            menuMobile.classList.remove('open');
+            document.querySelector('.icon').src = "images/menu_white_36dp.svg";
+        }
+    });
+});
+// fim functin rolagem
 window.addEventListener('load', () => {
     const visibilityStates = new WeakMap();
 

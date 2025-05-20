@@ -34,7 +34,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         <div class="nav-list">
             <ul class="list-item">
                 <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('OquesãoMilhas', event)">O que são Milhas</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('JaPassouPorIsso', event)">Já passou por isso?</a></li>
+                <li class="nav-item"><a href="#accordion" class="nav-link">Já passou por isso?</a></li>
                 <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
             </ul>
         </div>
@@ -54,7 +54,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
     <div class="mobile-menu">
         <ul>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('OquesãoMilhas', event)">O que são Milhas</a></li>
-            <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('JaPassouPorIsso')">Já passou por isso?</a></li>
+            <li class="nav-item"><a href="#saiba" class="nav-link">Já passou por isso?</a></li>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
         </ul>
         <div class="social-media-icons">
@@ -93,24 +93,6 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
                 <button onclick="closePopup('OquesãoMilhas')">Fechar</button>
             </div>
         </div>
-    </dialog>
-    <dialog id="JaPassouPorIsso" class ="popup-dialog">
-        <div class="popup-box">
-            <div class="popup-content">
-                <p>Toda vez que vou viajar, sinto que as passagens e hotéis são muito caros;
-                    Vejo meus amigos viajando de graça e eu continuo pagando caro em passagens, hotéis, aluguel de carro;
-                    Me sinto perdido quando o assunto é milhas, é muita informação e não tenho paciência de olhar nem conhecer;
-                    Tenho uma boa renda, mas não consigo acessar os melhores cartões;
-                    Gasto muito no cartão de crédito e não sei para onde vão meus pontos, nunca aumentam;
-                    Não consigo me organizar com clubes e programas, sempre acabo deixando meus pontos expirar:
-                    Não sei quanto valem as minhas milhas, fico com pena de usar e com receio de fazer um mau negócio;
-                    Não consigo viajar com conforto diferenciado, com salas VIP, upgrades, embarques prioritários,
-                    Escolha de assentos e bagagens gratuitas;
-                    Não sei quando ocorrem as promoções nem se são boas, nunca sei o melhor momento de transferir;
-                    Prefiro o cashback ou trocar meus pontos por produtos por que tenho a sensação de que não desperdicei;</p>
-                <button onclick="closePopup('JaPassouPorIsso')">Fechar</button>
-            </div>
-        </div> 
     </dialog>
     <dialog id="NossoServicos" class="popup-dialog">
         <div class="popup-box">
@@ -170,9 +152,50 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         </div>
      <br>
 
-     <!-- Começo do accordion -->
+        <br>
+        <section class="garantia hidden-carousel">
+                <div class="container"> 
+                    <div class="garantia-wrapper">
+                      <div class="garantia-item">
+                        <div class="garantia-imagem">
+                          <img src="images/1-removebg-preview (1).png" alt="Emissão Segura" />
+                        </div>
+                        <ul class="garantia-lista">
+                          <li>Passagem emitida no site oficial</li>
+                          <li>Localizador e reserva no seu e-mail</li>
+                          <li>Atendimento rápido via WhatsApp</li>
+                        </ul>
+                      </div>
+                  
+                      <div class="garantia-item">
+                        <div class="garantia-imagem">
+                          <img src="images/2-removebg-preview (1).png" alt="Atendimento" />
+                        </div>
+                        <ul class="garantia-lista">
+                          <li>Suporte antes, durante e depois</li>
+                          <li>Equipe especializada disponível</li>
+                          <li>Transparência em cada passo</li>
+                        </ul>
+                      </div>
+                  
+                      <div class="garantia-item">
+                        <div class="garantia-imagem">
+                          <img src="images/3-removebg-preview (1).png" alt="Viagem Tranquila" />
+                        </div>
+                        <ul class="garantia-lista">
+                          <li>Viaje com tranquilidade</li>
+                          <li>Segurança do início ao fim</li>
+                          <li>Economia garantida</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+          </section>
+          <br>
+           <!-- Começo do accordion -->
 
-<h2 id="saiba">Possui dúvidas?</h2>
+<h2 id="saiba">Já passou por isso?</h2>
+
      <!-- pergunta 1 -->
     <div id="accordion">
         <div class="accordion">
@@ -241,46 +264,6 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         </div>    
     </div>
     <!-- Fim do accordion -->
-
-        <br>
-        <section class="garantia hidden-carousel">
-                <div class="container"> 
-                    <div class="garantia-wrapper">
-                      <div class="garantia-item">
-                        <div class="garantia-imagem">
-                          <img src="images/1-removebg-preview (1).png" alt="Emissão Segura" />
-                        </div>
-                        <ul class="garantia-lista">
-                          <li>Passagem emitida no site oficial</li>
-                          <li>Localizador e reserva no seu e-mail</li>
-                          <li>Atendimento rápido via WhatsApp</li>
-                        </ul>
-                      </div>
-                  
-                      <div class="garantia-item">
-                        <div class="garantia-imagem">
-                          <img src="images/2-removebg-preview (1).png" alt="Atendimento" />
-                        </div>
-                        <ul class="garantia-lista">
-                          <li>Suporte antes, durante e depois</li>
-                          <li>Equipe especializada disponível</li>
-                          <li>Transparência em cada passo</li>
-                        </ul>
-                      </div>
-                  
-                      <div class="garantia-item">
-                        <div class="garantia-imagem">
-                          <img src="images/3-removebg-preview (1).png" alt="Viagem Tranquila" />
-                        </div>
-                        <ul class="garantia-lista">
-                          <li>Viaje com tranquilidade</li>
-                          <li>Segurança do início ao fim</li>
-                          <li>Economia garantida</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-          </section>
           <!-- começo rodapé do site -->
 <footer id="footer-link">
     <div id="footer-content">
@@ -306,7 +289,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         </ul>
         <ul class="footer-list">
             <li>
-                <h3>produtos</h3>
+                <h3>Produtos</h3>
             </li>
             <li> 
                 <a href="#" class="footer-link">Milhas áreas</a>
