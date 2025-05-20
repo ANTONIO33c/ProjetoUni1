@@ -73,7 +73,7 @@ swiper.on("slideChange", updateCaption); // Atualiza a cada troca de slide
 //   Fim legenda
 
 //function rolagem
-document.querySelectorAll('.nav-link').forEach(link => {
+document.querySelectorAll('.acorddion-function').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
 
