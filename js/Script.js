@@ -72,7 +72,7 @@ updateCaption(); // Define legenda inicial
 swiper.on("slideChange", updateCaption); // Atualiza a cada troca de slide
 //   Fim legenda
 
-//function rolagem
+//function rolagem mobile
 document.querySelectorAll('.accordion-function').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();

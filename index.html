@@ -34,7 +34,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         <div class="nav-list">
             <ul class="list-item">
                 <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('OquesãoMilhas', event)">O que são Milhas</a></li>
-                <li class="nav-item"><a href="#accordion" class="nav-link accordion-function">Já passou por isso?</a></li>
+                <li class="nav-item"><a href="#" class="nav-link accordion-function" onclick="scrollParaAlvoResponsivo(event)">Já passou por isso?</a></li> 
                 <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
             </ul>
         </div>
@@ -54,7 +54,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
     <div class="mobile-menu">
         <ul>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('OquesãoMilhas', event)">O que são Milhas</a></li>
-            <li class="nav-item"><a href="#saiba" class="nav-link accordion-function">Já passou por isso?</a></li>
+            <li class="nav-item"><a href="#" class="nav-link accordion-function" onclick="scrollParaAlvoResponsivo(event)">Já passou por isso?</a></li> 
             <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
         </ul>
         <div class="social-media-icons">
@@ -187,15 +187,18 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
                         <ul class="garantia-lista">
                           <li>Viaje com tranquilidade</li>
                           <li>Segurança do início ao fim</li>
-                          <li>Economia garantida</li>
+                          <li id="mobile-alvo">Economia garantida</li>
                         </ul>
+                        <!-- <div id="link-accordion"></div> -->
                       </div>
                     </div>
                   </div>
+                         
           </section>
+   
           <br>
            <!-- Começo do accordion -->
-
+<div id="desktop-alvo"></div>
 <h2 id="saiba">Já passou por isso?</h2>
 
      <!-- pergunta 1 -->
