@@ -94,6 +94,27 @@ document.querySelectorAll('.accordion-function').forEach(link => {
     });
 });
 // fim functin rolagem
+// controle de rolagem para resposividade dos dispositivos
+
+ function scrollParaAlvoResponsivo(event) {
+  event.preventDefault(); // Impede o comportamento padrão do link
+
+  // Verifica a largura da tela
+  const largura = window.innerWidth;
+  // Define o ID do alvo com base no tamanho da tela
+  const idAlvo = largura <= 768 ? "mobile-alvo" : "desktop-alvo";
+
+  // Busca o elemento pelo ID
+  const alvo = document.getElementById(idAlvo);
+  
+  // Verifica se o elemento existe e faz o scroll até ele
+  if (alvo) {
+    alvo.scrollIntoView({ behavior: "smooth" }); // Rolagem suave até o alvo
+  } else {
+    console.warn(`Elemento com id '${idAlvo}' não encontrado.`);
+  }
+}
+// fim controle de rolagem para resposividade do link
 window.addEventListener('load', () => {
     const visibilityStates = new WeakMap();
 
