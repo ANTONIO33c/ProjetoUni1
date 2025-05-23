@@ -35,7 +35,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
             <ul class="list-item">
                 <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('OquesãoMilhas', event)">O que são Milhas</a></li>
                 <li class="nav-item"><a href="#" class="nav-link accordion-function" onclick="scrollParaAlvoResponsivo(event)">Já passou por isso?</a></li> 
-                <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('NossoServicos', event)">Nossos Serviços</a></li>
             </ul>
         </div>
         <div class="social-media-icons">
@@ -55,7 +55,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         <ul>
             <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('OquesãoMilhas', event)">O que são Milhas</a></li>
             <li class="nav-item"><a href="#" class="nav-link accordion-function" onclick="scrollParaAlvoResponsivo(event)">Já passou por isso?</a></li> 
-            <li class="nav-item"><a href="#" class="nav-link" onclick="openModal('NossoServicos')">Nossos Serviços</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="openPopupAndShowAirplane('NossoServicos', event)">Nossos Serviços</a></li>
         </ul>
         <div class="social-media-icons">
             <!-- <a href="https://www.instagram.com" target="_blank" class="social-icon instagram-icon">
@@ -73,7 +73,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
         <a href="#header"></a>
      </div>
 
-    <a href="https://wa.me/SEUNUMERO" class="whatsapp-button" target="_blank" aria-label="Fale conosco no WhatsApp">
+    <a href="https://wa.me/5511920421661" class="whatsapp-button" target="_blank" aria-label="Fale conosco no WhatsApp">
         <!-- <img class="whatsapp-img-desktop" src="images/Whatsapp_button.png" alt="WhatsApp"> -->
         <img class="whatsapp-img-mobile" src="images/WhatsappButtonMobile.png" alt="WhatsApp">
     </a>
@@ -96,7 +96,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
     </dialog>
     <dialog id="NossoServicos" class="popup-dialog">
         <div class="popup-box">
-            <div class="popup-content">
+            <div class="popup-content"> 
                 <p>Na GC World Travels, oferecemos soluções inteligentes para quem busca economia e praticidade na hora de viajar. Nosso principal serviço é a venda de passagens aéreas com descontos especiais, aproveitando o melhor custo-benefício disponível no mercado.</p>
                 <p>Trabalhamos com as melhores estratégias para garantir tarifas mais acessíveis, ajudando você a voar pagando menos. Seja para viagens nacionais ou internacionais, oferecemos opções personalizadas para atender às suas necessidades com segurança, agilidade e transparência.</p>
                 <p>Na GC World Travels, transformar o seu jeito de viajar é a nossa missão. Oferecemos soluções inteligentes e econômicas para quem quer explorar o mundo com praticidade, conforto e o melhor custo-benefício.</p>
@@ -199,10 +199,10 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
           <br>
            <!-- Começo do accordion -->
 <div id="desktop-alvo"></div>
-<h2 id="saiba">Já passou por isso?</h2>
+<h2 id="saiba" class="hidden-carousel">Já passou por isso?</h2>
 
      <!-- pergunta 1 -->
-    <div id="accordion">
+    <div id="accordion" class="hidden-carousel">
         <div class="accordion">
             <button class="accordion-header">
                 <span>Toda vez que vou viajar, sinto que as passagens e hotéis são muito caros.</span>
@@ -271,7 +271,7 @@ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.
     <!-- Fim do accordion -->
           <!-- começo rodapé do site -->
 <footer id="footer-link">
-    <div id="footer-content">
+    <div id="footer-content" class="hidden-carousel">
         <div id="footer-contacts">
             <img src="images/logo_empresa_gggggggg.jpg" alt="" srcset="">
             <br>
